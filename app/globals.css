@@ -1,26 +1,997 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --lavender: #a4a9f6;
+  --orange: #f05928;
+  --navy: #16205a;
+  --primary-blue: #0373ff;
+  --light-blue: #e0eaf9;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Radial Lines Effect */
+.radial-lines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.radial-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 25vh;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(164, 169, 246, 0.2) 30%,
+    rgba(164, 169, 246, 0.4) 50%,
+    rgba(164, 169, 246, 0.2) 70%,
+    transparent 100%
+  );
+  transform-origin: bottom center;
+  animation: radial-pulse 12s infinite ease-in-out;
+}
+
+.radial-line:nth-child(odd) {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(240, 89, 40, 0.2) 30%,
+    rgba(240, 89, 40, 0.4) 50%,
+    rgba(240, 89, 40, 0.2) 70%,
+    transparent 100%
+  );
+  animation-delay: 3s;
+}
+
+.radial-line:nth-child(3n) {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(3, 115, 255, 0.2) 30%,
+    rgba(3, 115, 255, 0.4) 50%,
+    rgba(3, 115, 255, 0.2) 70%,
+    transparent 100%
+  );
+  animation-delay: 6s;
+}
+
+.radial-line:nth-child(5n) {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(22, 32, 90, 0.2) 30%,
+    rgba(22, 32, 90, 0.4) 50%,
+    rgba(22, 32, 90, 0.2) 70%,
+    transparent 100%
+  );
+  animation-delay: 9s;
+}
+
+/* Enhanced Lines Animation - RESTORED */
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.7;
+}
+
+.line {
+  position: relative;
+  width: 1px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 25vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  animation: drop 10s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.line-1::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(164, 169, 246, 0) 0%,
+    rgba(164, 169, 246, 0.4) 75%,
+    rgba(164, 169, 246, 0.8) 100%
+  );
+  animation-delay: 0s;
+}
+
+.line-2::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(240, 89, 40, 0) 0%,
+    rgba(240, 89, 40, 0.4) 75%,
+    rgba(240, 89, 40, 0.8) 100%
+  );
+  animation-delay: 1s;
+}
+
+.line-3::after {
+  background: linear-gradient(to bottom, rgba(22, 32, 90, 0) 0%, rgba(22, 32, 90, 0.4) 75%, rgba(22, 32, 90, 0.8) 100%);
+  animation-delay: 2s;
+}
+
+.line-4::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 115, 255, 0) 0%,
+    rgba(3, 115, 255, 0.4) 75%,
+    rgba(3, 115, 255, 0.8) 100%
+  );
+  animation-delay: 3s;
+}
+
+.line-5::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(224, 234, 249, 0) 0%,
+    rgba(164, 169, 246, 0.4) 75%,
+    rgba(164, 169, 246, 0.8) 100%
+  );
+  animation-delay: 4s;
+}
+
+.line-6::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(240, 89, 40, 0) 0%,
+    rgba(240, 89, 40, 0.4) 75%,
+    rgba(240, 89, 40, 0.8) 100%
+  );
+  animation-delay: 5s;
+}
+
+.line-7::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 115, 255, 0) 0%,
+    rgba(3, 115, 255, 0.4) 75%,
+    rgba(3, 115, 255, 0.8) 100%
+  );
+  animation-delay: 0.5s;
+}
+
+.line-8::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(164, 169, 246, 0) 0%,
+    rgba(164, 169, 246, 0.4) 75%,
+    rgba(164, 169, 246, 0.8) 100%
+  );
+  animation-delay: 1.5s;
+}
+
+.line-9::after {
+  background: linear-gradient(to bottom, rgba(22, 32, 90, 0) 0%, rgba(22, 32, 90, 0.4) 75%, rgba(22, 32, 90, 0.8) 100%);
+  animation-delay: 2.5s;
+}
+
+.line-10::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(240, 89, 40, 0) 0%,
+    rgba(240, 89, 40, 0.4) 75%,
+    rgba(240, 89, 40, 0.8) 100%
+  );
+  animation-delay: 3.5s;
+}
+
+.line-11::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 115, 255, 0) 0%,
+    rgba(3, 115, 255, 0.4) 75%,
+    rgba(3, 115, 255, 0.8) 100%
+  );
+  animation-delay: 4.5s;
+}
+
+.line-12::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(164, 169, 246, 0) 0%,
+    rgba(164, 169, 246, 0.4) 75%,
+    rgba(164, 169, 246, 0.8) 100%
+  );
+  animation-delay: 5.5s;
+}
+
+/* Enhanced Floating Particles - RESTORED */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 18s infinite linear;
+  opacity: 0.6;
+}
+
+.particle-1 {
+  width: 4px;
+  height: 4px;
+  left: 5%;
+  background: rgba(164, 169, 246, 0.8);
+  animation-delay: 0s;
+}
+.particle-2 {
+  width: 6px;
+  height: 6px;
+  left: 15%;
+  background: rgba(240, 89, 40, 0.8);
+  animation-delay: 2s;
+}
+.particle-3 {
+  width: 3px;
+  height: 3px;
+  left: 25%;
+  background: rgba(22, 32, 90, 0.8);
+  animation-delay: 4s;
+}
+.particle-4 {
+  width: 5px;
+  height: 5px;
+  left: 35%;
+  background: rgba(3, 115, 255, 0.8);
+  animation-delay: 6s;
+}
+.particle-5 {
+  width: 4px;
+  height: 4px;
+  left: 45%;
+  background: rgba(164, 169, 246, 0.8);
+  animation-delay: 8s;
+}
+.particle-6 {
+  width: 7px;
+  height: 7px;
+  left: 55%;
+  background: rgba(240, 89, 40, 0.8);
+  animation-delay: 10s;
+}
+.particle-7 {
+  width: 3px;
+  height: 3px;
+  left: 65%;
+  background: rgba(3, 115, 255, 0.8);
+  animation-delay: 12s;
+}
+.particle-8 {
+  width: 5px;
+  height: 5px;
+  left: 75%;
+  background: rgba(22, 32, 90, 0.8);
+  animation-delay: 14s;
+}
+.particle-9 {
+  width: 4px;
+  height: 4px;
+  left: 85%;
+  background: rgba(164, 169, 246, 0.8);
+  animation-delay: 16s;
+}
+.particle-10 {
+  width: 6px;
+  height: 6px;
+  left: 95%;
+  background: rgba(240, 89, 40, 0.8);
+  animation-delay: 18s;
+}
+.particle-11 {
+  width: 3px;
+  height: 3px;
+  left: 10%;
+  background: rgba(3, 115, 255, 0.8);
+  animation-delay: 1s;
+}
+.particle-12 {
+  width: 5px;
+  height: 5px;
+  left: 30%;
+  background: rgba(164, 169, 246, 0.8);
+  animation-delay: 3s;
+}
+.particle-13 {
+  width: 4px;
+  height: 4px;
+  left: 50%;
+  background: rgba(240, 89, 40, 0.8);
+  animation-delay: 5s;
+}
+.particle-14 {
+  width: 6px;
+  height: 6px;
+  left: 70%;
+  background: rgba(22, 32, 90, 0.8);
+  animation-delay: 7s;
+}
+.particle-15 {
+  width: 3px;
+  height: 3px;
+  left: 90%;
+  background: rgba(3, 115, 255, 0.8);
+  animation-delay: 9s;
+}
+
+/* Enhanced Geometric Elements - RESTORED */
+.geometric-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.geo-element {
+  position: absolute;
+  opacity: 0.12;
+}
+
+.circle-1 {
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--lavender);
+  border-radius: 50%;
+  top: 20%;
+  left: 8%;
+  animation: rotate 25s infinite linear;
+}
+
+.circle-2 {
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--orange);
+  border-radius: 50%;
+  top: 60%;
+  right: 12%;
+  animation: rotate 20s infinite linear reverse;
+}
+
+.circle-3 {
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--primary-blue);
+  border-radius: 50%;
+  top: 80%;
+  left: 70%;
+  animation: rotate 30s infinite linear;
+}
+
+.square-1 {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--navy);
+  top: 40%;
+  left: 85%;
+  animation: pulse-gentle 6s infinite ease-in-out;
+}
+
+.square-2 {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--lavender);
+  top: 70%;
+  left: 5%;
+  animation: pulse-gentle 8s infinite ease-in-out;
+}
+
+.triangle-1 {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 43px solid rgba(240, 89, 40, 0.2);
+  top: 15%;
+  left: 60%;
+  animation: bounce 12s infinite ease-in-out;
+}
+
+/* Enhanced Connection Lines - RESTORED */
+.connection-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.connection-line {
+  position: absolute;
+  animation: slide 15s infinite linear;
+}
+
+.line-horizontal-1 {
+  width: 250px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(164, 169, 246, 0.3), transparent);
+  top: 30%;
+  left: -250px;
+}
+
+.line-horizontal-2 {
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240, 89, 40, 0.3), transparent);
+  top: 70%;
+  left: -200px;
+  animation-delay: 7s;
+}
+
+.line-diagonal-1 {
+  width: 180px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(3, 115, 255, 0.3), transparent);
+  top: 50%;
+  left: -180px;
+  transform: rotate(30deg);
+  animation-delay: 3s;
+}
+
+.line-diagonal-2 {
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(22, 32, 90, 0.3), transparent);
+  top: 80%;
+  left: -160px;
+  transform: rotate(-30deg);
+  animation-delay: 10s;
+}
+
+.line-vertical-1 {
+  width: 1px;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, rgba(164, 169, 246, 0.3), transparent);
+  top: -150px;
+  left: 50%;
+  animation: slide-vertical 18s infinite linear;
+  animation-delay: 5s;
+}
+
+/* Enhanced Gradient Orbs - RESTORED */
+.gradient-orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.06;
+  animation: float-orb 20s infinite ease-in-out;
+}
+
+.orb-1 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, var(--lavender), transparent);
+  top: 15%;
+  left: 5%;
+}
+
+.orb-2 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, var(--orange), transparent);
+  bottom: 15%;
+  right: 8%;
+  animation-delay: 8s;
+}
+
+.orb-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--primary-blue), transparent);
+  top: 50%;
+  left: 80%;
+  animation-delay: 4s;
+}
+
+.orb-4 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--navy), transparent);
+  top: 70%;
+  left: 10%;
+  animation-delay: 12s;
+}
+
+/* Floating Bubbles Background - RESTORED */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: bubble-float 25s infinite linear;
+}
+
+.bubble-1 {
+  width: 20px;
+  height: 20px;
+  left: 10%;
+  background: var(--lavender);
+  animation-delay: 0s;
+}
+.bubble-2 {
+  width: 15px;
+  height: 15px;
+  left: 20%;
+  background: var(--orange);
+  animation-delay: 3s;
+}
+.bubble-3 {
+  width: 25px;
+  height: 25px;
+  left: 30%;
+  background: var(--primary-blue);
+  animation-delay: 6s;
+}
+.bubble-4 {
+  width: 18px;
+  height: 18px;
+  left: 40%;
+  background: var(--navy);
+  animation-delay: 9s;
+}
+.bubble-5 {
+  width: 22px;
+  height: 22px;
+  left: 50%;
+  background: var(--lavender);
+  animation-delay: 12s;
+}
+.bubble-6 {
+  width: 16px;
+  height: 16px;
+  left: 60%;
+  background: var(--orange);
+  animation-delay: 15s;
+}
+.bubble-7 {
+  width: 24px;
+  height: 24px;
+  left: 70%;
+  background: var(--primary-blue);
+  animation-delay: 18s;
+}
+.bubble-8 {
+  width: 19px;
+  height: 19px;
+  left: 80%;
+  background: var(--navy);
+  animation-delay: 21s;
+}
+.bubble-9 {
+  width: 17px;
+  height: 17px;
+  left: 90%;
+  background: var(--lavender);
+  animation-delay: 24s;
+}
+.bubble-10 {
+  width: 21px;
+  height: 21px;
+  left: 95%;
+  background: var(--orange);
+  animation-delay: 27s;
+}
+
+/* Decorative Dots - RESTORED */
+.decorative-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: dot-pulse 6s infinite ease-in-out;
+}
+
+.dot-1 {
+  top: 15%;
+  left: 10%;
+  background: var(--lavender);
+}
+
+.dot-2 {
+  top: 25%;
+  right: 15%;
+  background: var(--orange);
+  animation-delay: 1s;
+}
+
+.dot-3 {
+  top: 60%;
+  left: 8%;
+  background: var(--primary-blue);
+  animation-delay: 2s;
+}
+
+.dot-4 {
+  top: 70%;
+  right: 20%;
+  background: var(--navy);
+  animation-delay: 3s;
+}
+
+.dot-5 {
+  top: 80%;
+  left: 85%;
+  background: var(--lavender);
+  animation-delay: 4s;
+}
+
+.dot-6 {
+  top: 40%;
+  left: 5%;
+  background: var(--orange);
+  animation-delay: 5s;
+}
+
+.dot-7 {
+  top: 30%;
+  left: 90%;
+  background: var(--primary-blue);
+  animation-delay: 0.5s;
+}
+
+.dot-8 {
+  top: 85%;
+  left: 15%;
+  background: var(--navy);
+  animation-delay: 2.5s;
+}
+
+/* Custom Colors */
+.text-navy {
+  color: var(--navy) !important;
+}
+
+.text-primary-blue {
+  color: var(--primary-blue) !important;
+}
+
+.text-lavender {
+  color: var(--lavender) !important;
+}
+
+.text-orange {
+  color: var(--orange) !important;
+}
+
+.bg-lavender {
+  background-color: var(--lavender);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.bg-navy {
+  background-color: var(--navy);
+}
+
+.bg-primary-blue {
+  background-color: var(--primary-blue);
+}
+
+/* Enhanced Animated Background Gradient - RESTORED */
+.animated-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(164, 169, 246, 0.02) 0%,
+    rgba(240, 89, 40, 0.02) 25%,
+    rgba(22, 32, 90, 0.02) 50%,
+    rgba(3, 115, 255, 0.02) 75%,
+    rgba(224, 234, 249, 0.02) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 18s infinite ease-in-out;
+}
+
+/* Enhanced Animations - ALL RESTORED */
+@keyframes radial-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scaleY(0.9);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scaleY(1.1);
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -50%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes bubble-float {
+  0% {
+    transform: translateY(100vh) translateX(0px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(50px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-gentle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.18;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: -300px;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    left: 100vw;
+    opacity: 0;
+  }
+}
+
+@keyframes slide-vertical {
+  0% {
+    top: -150px;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+  }
+}
+
+@keyframes float-orb {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-25px) translateX(20px);
+  }
+  66% {
+    transform: translateY(20px) translateX(-15px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes dot-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.3);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .radial-line {
+    height: 20vh;
+  }
+
+  .lines {
+    width: 98vw;
+  }
+
+  .geo-element {
+    transform: scale(0.6);
+  }
+
+  .orb {
+    transform: scale(0.5);
+  }
+
+  .particle {
+    transform: scale(0.7);
+  }
+
+  .bubble {
+    transform: scale(0.8);
+  }
+
+  nav {
+    padding: 1rem;
+  }
+
+  nav .hidden {
+    display: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lavender);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue);
+}
+
+ 
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+ 
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+
+@keyframes ping {
+  0% { transform: scale(1); opacity: 1; }
+  75%, 100% { transform: scale(2); opacity: 0; }
 }
