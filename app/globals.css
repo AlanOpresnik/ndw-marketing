@@ -995,3 +995,23 @@ body {
   0% { transform: scale(1); opacity: 1; }
   75%, 100% { transform: scale(2); opacity: 0; }
 }
+
+@keyframes rgb-border {
+  0% {
+    border-image-source: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+  }
+  100% {
+    border-image-source: linear-gradient(405deg, red, orange, yellow, green, cyan, blue, violet, red);
+  }
+}
+
+.rgb-border-hover {
+  border: 2px solid transparent;
+  border-image-slice: 1;
+  transition: border 0.3s ease-in-out;
+}
+
+.rgb-border-hover {
+  animation: rgb-border 3s linear infinite;
+  border-image-source: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+}

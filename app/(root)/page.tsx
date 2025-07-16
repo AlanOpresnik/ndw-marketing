@@ -9,6 +9,7 @@ import ClientEarthWrapper from "./components/World3d/ClientWrapper/ClientWrapper
 
 import LeftSectionWorld from "./components/World3d/LeftSectionWorld/LeftSectionWorld";
 import Navbar from "@/components/shared/Navbar/Navbar";
+import TestimonialsSection from "./components/TestimonialsSection/TestimonialsSection";
 
 export default function Home() {
   return (
@@ -150,10 +151,13 @@ export default function Home() {
             <div className="w-96 h-96 bg-[#f05a2818] opacity-10 rounded-full blur-3xl animate-pulse absolute bottom-10 right-10"></div>
           </div>
         </section>
+        <section className="!z-50">
+          <TestimonialsSection/>
+        </section>
       </div>
 
       {/* Enhanced Animated Background Gradient - RESTORED */}
-      <div className="animated-gradient"></div>
+      <div className="animated-gradient z-[-1]"></div>
     </div>
   );
 }
