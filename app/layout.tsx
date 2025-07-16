@@ -9,9 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.dev",
+  title: "NDW AGENCIA DE MARKETING ",
+  description: "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
 };
 
 export default function RootLayout({
