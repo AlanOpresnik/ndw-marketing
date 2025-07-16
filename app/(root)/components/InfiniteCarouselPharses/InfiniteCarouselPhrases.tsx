@@ -1,16 +1,19 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { InfiniteMovingPhrases } from "@/components/ui/infinite-moving-pharses";
+import React from "react";
+import  InfiniteMovingPhrases from "@/components/ui/infinite-moving-pharses";
 
 export function InfiniteCarouselPhrases() {
   return (
     <div className=" rounded-md flex flex-col antialiased   items-center justify-center relative overflow-hidden">
-      <InfiniteMovingPhrases
-        items={pharses}
-        direction="left"
-        speed="normal"
-      />
+      {pharses.map((phrase, idx) => (
+        <InfiniteMovingPhrases
+          key={idx}
+          text={phrase.quote}
+          avatar={phrase.avatar}
+          speed="normal"
+        />
+      ))}
     </div>
   );
 }

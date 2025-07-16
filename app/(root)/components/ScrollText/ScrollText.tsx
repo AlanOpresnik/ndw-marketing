@@ -2,7 +2,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitType from "split-type";
 import Image from "next/image";
 import MainButton from "@/components/shared/MainButton";
 import { ArrowRightFromLine } from "lucide-react";
@@ -15,11 +14,7 @@ export default function HeroScrollText() {
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    // Separación por letras
-    const split = new SplitType(".headline, .headline-gradient", {
-      types: "chars",
-      tagName: "span",
-    });
+
 
     if (!sectionRef.current) return;
 

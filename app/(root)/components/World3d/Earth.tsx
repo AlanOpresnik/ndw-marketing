@@ -2,35 +2,48 @@
 
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import React, { useEffect, useRef } from "react";
+import React, { JSX, useEffect, useRef } from "react";
+import * as THREE from "three";
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF("/models/scene.gltf");
-  const ref = useRef();
- useFrame(() => {
+type ModelProps = JSX.IntrinsicElements["group"];
+
+export function Model(props: ModelProps) {
+  const { nodes, materials } = useGLTF("/models/scene.gltf") as unknown as {
+    nodes: {
+      Object_2: THREE.Mesh;
+      Object_3: THREE.Mesh;
+      Object_4: THREE.Mesh;
+    };
+    materials: {
+      matairport_material: THREE.Material;
+      matsurface_material: THREE.Material;
+    };
+  };
+  const ref = useRef<THREE.Group>(null!);
+  useFrame(() => {
     if (ref.current) {
       ref.current.rotation.y += 0.002; // velocidad de rotación
     }
   });
 
-    const [isMobile, setIsMobile] = React.useState(false);
-  
-    useEffect(() => {
-      function checkScreen() {
-        setIsMobile(window.innerWidth < 768);
-      }
-  
-      checkScreen();
-  
-      window.addEventListener("resize", checkScreen);
-      return () => window.removeEventListener("resize", checkScreen);
-    }, []);
+  const [isMobile, setIsMobile] = React.useState<boolean>(false);
+
+  useEffect(() => {
+    function checkScreen(): void {
+      setIsMobile(window.innerWidth < 768);
+    }
+
+    checkScreen();
+
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
   return (
     <group
       {...props}
-       ref={ref}
+      ref={ref}
       dispose={null}
-      scale={isMobile ? [2,2,2] : [3,3,3]}
+      scale={isMobile ? [2, 2, 2] : [3, 3, 3]}
       rotation={[0, 0, 0]}
     >
       <mesh

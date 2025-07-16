@@ -40,7 +40,7 @@ export default function TestimonialCard({
           />
         </div>
         <blockquote className="text-lg border-b border-gray-500 !pb-16 z-10 font-light md:text-3xl leading-relaxed text-gray-100 flex-grow !mb-6">
-          "{quote}"
+          &quot;{quote}&quot;
         </blockquote>
 
 

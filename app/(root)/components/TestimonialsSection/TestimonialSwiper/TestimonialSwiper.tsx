@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import TestimonialCard from "./TestimonialCard";
 
 const testimonials = [
@@ -150,16 +149,18 @@ export default function TestimonialSwiper() {
             }}
           >
             {testimonials.map((testimonial) => (
-              <TestimonialCard
-                avatar={testimonial.avatar}
-                company={testimonial.company}
-                id={testimonial.id}
-                initials={testimonial.initials}
-                name={testimonial.name}
-                quote={testimonial.quote}
-                companyName={testimonial.companyName}
-                slidesPerView={slidesPerView}
-              />
+              <div key={testimonial.id}>
+                <TestimonialCard
+                  avatar={testimonial.avatar}
+                  company={testimonial.company}
+                  id={testimonial.id}
+                  initials={testimonial.initials}
+                  name={testimonial.name}
+                  quote={testimonial.quote}
+                  companyName={testimonial.companyName}
+                  slidesPerView={slidesPerView}
+                />
+              </div>
             ))}
           </div>
         </div>

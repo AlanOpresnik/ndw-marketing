@@ -66,10 +66,10 @@ export default function AboutUsSection() {
           trigger: titleRef.current,
           start: "top 110%", // más espacio para animar
           end: "top 50%",
-          scrub: true
+          scrub: true,
         },
       }
-    ), titleRef;
+    );
 
     return () => ctx.revert();
   }, [isMobile]);
@@ -113,9 +113,7 @@ export default function AboutUsSection() {
           ref={titleRef}
           className="text-[3rem] w-full md:text-[6rem] lg:text-[8rem] xl:text-[10rem] text-center font-bold bg-gradient-to-r from-[#F05928] via-[#0373FF] to-[#A4A9F6] bg-clip-text text-transparent"
         >
-          {isMobile ? (
-          'NEW DIGITAL'
-          ) : 'NEW DIGITAL WORLD'}
+          {isMobile ? "NEW DIGITAL" : "NEW DIGITAL WORLD"}
         </h1>
       </div>
     </>

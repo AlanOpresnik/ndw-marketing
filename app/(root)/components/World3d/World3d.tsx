@@ -7,7 +7,7 @@ import { Model } from "./Earth"; // Tu componente del modelo
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-export default function EarthCanvas(props) {
+export default function EarthCanvas() {
   gsap.registerPlugin(ScrollTrigger);
   const sectionRef = useRef(null);
   const modelRef = useRef(null);
