@@ -149,8 +149,9 @@ export default function TestimonialSwiper() {
             }}
           >
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id}>
+              
                 <TestimonialCard
+                key={testimonial.id}
                   avatar={testimonial.avatar}
                   company={testimonial.company}
                   id={testimonial.id}
@@ -160,7 +161,8 @@ export default function TestimonialSwiper() {
                   companyName={testimonial.companyName}
                   slidesPerView={slidesPerView}
                 />
-              </div>
+              
+            
             ))}
           </div>
         </div>
