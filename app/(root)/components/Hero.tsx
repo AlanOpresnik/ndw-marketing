@@ -9,7 +9,7 @@ export default function HeroMain() {
         <div className=" border !mb-2 md:!mb-0 border-white w-fit !p-2 rounded-full">
           <p className="text-white font-semibold">Influenciando marcas</p>
         </div>
-        <h1 className="text-[3rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] text-center font-bold bg-gradient-to-r from-[#F05928] via-[#0373FF] to-[#A4A9F6] bg-clip-text text-transparent">
+        <h1 className="text-[3rem] md:text-[6rem] leading-tight lg:text-[8rem] xl:text-[10rem] text-center font-bold bg-gradient-to-r from-[#F05928] via-[#0373FF] to-[#A4A9F6] bg-clip-text text-transparent">
           NEW DIGITAL WORLD
         </h1>
         <p className="text-white text-center  md:text-xl mt-6  delay-300">

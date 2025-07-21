@@ -4,12 +4,9 @@ import ScrollText from "./components/ScrollText/ScrollText";
 import DividerTextHuge from "./components/DividerTextHuge/DividerTextHuge";
 import AboutUsSection from "./components/AbourUsSection/AboutUsSection";
 import PowBanner from "@/components/ui/infinite-moving-pharses";
-
-import ClientEarthWrapper from "./components/World3d/ClientWrapper/ClientWrapper";
-
-import LeftSectionWorld from "./components/World3d/LeftSectionWorld/LeftSectionWorld";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import TestimonialsSection from "./components/TestimonialsSection/TestimonialsSection";
+import { WorldMapDemo } from "./components/WorldMap/WorldMap";
 
 export default function Home() {
   return (
@@ -142,10 +139,9 @@ export default function Home() {
         <div className="!mb-24">
           <PowBanner />
         </div>
-        <section className="h-screen !px-4 md:!px-16 relative flex items-center !mt-24">
-          <div className="flex flex-col md:flex-row items-center ">
-            <LeftSectionWorld />
-            <ClientEarthWrapper />
+        <section className="">
+          <div className=" items-center ">
+            <WorldMapDemo />
           </div>
           <div className="absolute  top-0 left-0 w-full h-full overflow-hidden ">
             <div className="w-96 h-96 bg-[#f05a2818] opacity-10 rounded-full blur-3xl animate-pulse absolute bottom-10 right-10"></div>

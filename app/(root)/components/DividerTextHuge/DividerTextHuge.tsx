@@ -16,7 +16,7 @@ export default function DividerTextHuge() {
         text1Ref.current,
         { x: -70 },
         {
-          x: 0,
+          x: 20,
           scrollTrigger: {
             trigger: text1Ref.current,
             start: "top 80%",
@@ -30,7 +30,7 @@ export default function DividerTextHuge() {
         text2Ref.current,
         { x: 70 },
         {
-          x: 0,
+          x: -20,
           scrollTrigger: {
             trigger: text2Ref.current,
             start: "top 80%",

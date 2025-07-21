@@ -1,189 +1,202 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import TestimonialCard from "./TestimonialCard";
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import type { Swiper as SwiperType } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const testimonials = [
   {
     id: 1,
-    quote:
-      "La productividad de nuestro equipo se dispara con esta herramienta de mensajería. Su simplicidad facilita la toma de decisiones rápida y una colaboración fluida, esenciales para el rápido desarrollo de nuestros productos.",
-    name: "Emily Rodriguez",
-    company: "Emily Rodriguez, PinPoint",
-    companyName: "PinPoint",
+    rating: 5,
+    text: "La productividad de nuestro equipo se dispara con esta herramienta de mensajería. Su simplicidad facilita la toma de decisiones rápida y una colaboración fluida, esenciales para el rápido desarrollo de nuestros productos.",
+    author: "Emily Rodriguez",
+    position: "Emily Rodriguez, PinPoint",
+    company: "PinPoint",
     avatar: "https://avatar.iran.liara.run/public",
-    initials: "ER",
   },
   {
     id: 2,
-    quote:
-      "Con esta herramienta, el flujo de trabajo de nuestro equipo se volvió más eficiente y organizado. Dedicamos menos tiempo a navegar por interfaces complejas y más tiempo a concentrarnos en lo importante: ofrecer productos de calidad a nuestros clientes.",
-    name: "David Patel",
-    company: "David Patel, Hues",
-    companyName: "Hues",
+    rating: 5,
+    text: "Increíble plataforma que ha transformado completamente nuestra forma de trabajar. La interfaz intuitiva y las funcionalidades avanzadas nos han permitido optimizar todos nuestros procesos internos.",
+    author: "Carlos Mendoza",
+    position: "Carlos Mendoza, TechFlow",
+    company: "TechFlow",
     avatar: "https://avatar.iran.liara.run/public",
-    initials: "DP",
   },
   {
     id: 3,
-    quote:
-      "The integration capabilities are outstanding. We've streamlined our entire workflow and reduced communication overhead by 60%. It's been a game-changer for our remote team.",
-    name: "Sarah Chen",
-    company: "Sarah Chen, TechFlow",
-    companyName: "TechFlow",
+    rating: 5,
+    text: "Una solución excepcional que superó todas nuestras expectativas. El soporte técnico es outstanding y la implementación fue sorprendentemente sencilla para todo nuestro equipo.",
+    author: "Ana García",
+    position: "Ana García, InnovateLab",
+    company: "InnovateLab",
     avatar: "https://avatar.iran.liara.run/public",
-    initials: "SC",
   },
   {
     id: 4,
-    quote:
-      "Customer support is exceptional and the platform is incredibly intuitive. Our onboarding time was cut in half, and team adoption was seamless across all departments.",
-    name: "Michael Johnson",
-    company: "Michael Johnson, InnovateLab",
-    companyName: "InnovateLab",
+    rating: 5,
+    text: "Desde que implementamos esta herramienta, nuestra eficiencia ha aumentado un 300%. Es exactamente lo que necesitábamos para escalar nuestro negocio de manera sostenible.",
+    author: "Miguel Torres",
+    position: "Miguel Torres, ScaleUp",
+    company: "ScaleUp",
     avatar: "https://avatar.iran.liara.run/public",
-    initials: "MJ",
-  },
-  {
-    id: 5,
-    quote:
-      "The analytics dashboard provides incredible insights into our team's performance. We've been able to identify bottlenecks and optimize our processes like never before.",
-    name: "Lisa Wang",
-    companyName: "DataDriven",
-    company: "Lisa Wang, DataDriven",
-    avatar: "https://avatar.iran.liara.run/public",
-    initials: "LW",
-  },
-  {
-    id: 6,
-    quote:
-      "Security features are top-notch and compliance management is seamless. Our IT team loves the granular control and our executives appreciate the transparency.",
-    name: "Robert Kim",
-    company: "Robert Kim, SecureFlow",
-     companyName: "SecureFlow",
-    avatar: "https://avatar.iran.liara.run/public",
-    initials: "RK",
   },
 ];
 
-export default function TestimonialSwiper() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [slidesPerView, setSlidesPerView] = useState(2);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setSlidesPerView(window.innerWidth < 768 ? 1 : 2.2);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const maxIndex = testimonials.length - slidesPerView;
-
-  const nextSlide = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
-
-  const prevSlide = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
-
-  const goToSlide = (index: number) => {
-    if (isTransitioning || index === currentIndex) return;
-    setIsTransitioning(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
+export default function TestimonialsSwiper() {
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const swiperRef = useRef<SwiperType>(null);
 
   return (
-    <section className=" text-white !py-16 !px-4 z-10">
-      <div className=" !mx-auto z-10">
-        {/* Header with navigation */}
-        <div className="flex items-center justify-between !mb-12 z-10">
-          <h2 className="text-3xl md:text-5xl font-bold z-10">
-            Lo que dicen nuestros clientes
-          </h2>
-          <div className="flex gap-2 z-10">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={prevSlide}
-              disabled={isTransitioning}
-              className="bg-transparent border-gray-600 hover:bg-gray-800 hover:border-gray-500 cursor-pointer text-white disabled:opacity-50"
-            >
-              <ChevronLeft className="h-4 w-4" />
-              <span className="sr-only">Previous testimonial</span>
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={nextSlide}
-              disabled={isTransitioning}
-              className="bg-transparent border-gray-600 cursor-pointer hover:bg-gray-800 hover:border-gray-500 text-white disabled:opacity-50"
-            >
-              <ChevronRight className="h-4 w-4" />
-              <span className="sr-only">Next testimonial</span>
-            </Button>
-          </div>
-        </div>
+    <section className=" min-h-screen !py-16 !px-4">
+      <div className="w-full mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-white !mb-12 text-center md:text-left">
+          Lo que dicen nuestros clientes
+        </h2>
 
-        {/* Slider container */}
-        <div className="overflow-hidden z-10">
-          <div
-            className="flex z-10 transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${
-                currentIndex * (100 / slidesPerView)
-              }%)`,
+        <div className="relative">
+          <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
             }}
+            onBeforeInit={(swiper) => {
+              // @ts-expect-error prevEl is manually assigned due to custom navigation refs
+              swiper.params.navigation.prevEl = prevRef.current;
+              // @ts-expect-error nextEl is manually assigned due to custom navigation refs
+              swiper.params.navigation.nextEl = nextRef.current;
+            }}
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.2,
+              },
+              768: {
+                slidesPerView: 1.2,
+              },
+              900: {
+                slidesPerView: 2.2,
+              },
+              1024: {
+                slidesPerView: 1.4,
+              },
+              1124: {
+                slidesPerView: 1.6,
+              },
+              1264: {
+                slidesPerView: 1.9,
+              },
+              1564: {
+                slidesPerView: 2.2,
+              },
+              1700: {
+                slidesPerView: 2.6,
+              },
+            }}
+            className="testimonials-swiper !pb-16"
           >
             {testimonials.map((testimonial) => (
-              
-                <TestimonialCard
-                key={testimonial.id}
-                  avatar={testimonial.avatar}
-                  company={testimonial.company}
-                  id={testimonial.id}
-                  initials={testimonial.initials}
-                  name={testimonial.name}
-                  quote={testimonial.quote}
-                  companyName={testimonial.companyName}
-                  slidesPerView={slidesPerView}
-                />
-              
-            
-            ))}
-          </div>
-        </div>
+              <SwiperSlide key={testimonial.id}>
+                <div className=" rounded-2xl !p-8 border bg-gradient-to-br from-transparent via-transparent to-gray-700 border-gray-700  flex flex-col lg:w-[700px] h-[490px] md:min-h-[550px]">
+                  {/* Rating Stars */}
+                  <div className="flex gap-1 !mb-6">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                      />
+                    ))}
+                  </div>
 
-        {/* Dots indicator */}
-        <div className="flex justify-center gap-2 !mt-8 !z-20">
-          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              disabled={isTransitioning}
-              className={`w-2 h-2 rounded-full transition-colors duration-200 disabled:cursor-not-allowed ${
-                index === currentIndex
-                  ? "bg-white"
-                  : "bg-gray-600 hover:bg-gray-500"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+                  {/* Testimonial Text */}
+                  <blockquote className="text-gray-200  md:text-2xl leading-relaxed !mb-8 flex-grow">
+                    &quot;{testimonial.text}&quot;
+                  </blockquote>
+
+                  {/* Author Info */}
+                  <div className="flex items-center justify-between !pt-6 border-t border-gray-700">
+                    <div className="flex items-center gap-4">
+                      <div className="relative">
+                        <img
+                          src={testimonial.avatar || "/placeholder.svg"}
+                          alt={testimonial.author}
+                          className="w-12 h-12 rounded-full bg-gray-600"
+                        />
+                      </div>
+                      <div>
+                        <div className="text-white font-semibold">
+                          {testimonial.author}
+                        </div>
+                        <div className="text-gray-400 text-sm">
+                          {testimonial.position}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-gray-400 font-medium">
+                      {testimonial.company}
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Custom Navigation Buttons */}
+          <button
+            ref={prevRef}
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10  hover:bg-gray-700 text-white !p-3 rounded-full border border-gray-600 transition-colors duration-200"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <button
+            ref={nextRef}
+            onClick={() => swiperRef.current?.slideNext()}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10  hover:bg-gray-700 text-white !p-3 rounded-full border border-gray-600 transition-colors duration-200"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
+
+      <style jsx global>{`
+        .testimonials-swiper .swiper-pagination {
+          bottom: 0 !important;
+          position: relative !important;
+          margin-top: 2rem !important;
+        }
+
+        .testimonials-swiper .swiper-pagination-bullet {
+          width: 12px !important;
+          height: 12px !important;
+          margin: 0 6px !important;
+          background: #4b5563 !important;
+          opacity: 0.5 !important;
+        }
+
+        .testimonials-swiper .swiper-pagination-bullet-active {
+          background: #ffffff !important;
+          opacity: 1 !important;
+        }
+      `}</style>
     </section>
   );
 }

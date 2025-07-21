@@ -44,7 +44,7 @@ export default function AboutUsSection() {
 
       // Texto: se acerca a la imagen (arriba o lateral)
       gsap.to(textRef.current, {
-        x: isMobile ? 0 : -200, // se acerca hacia arriba
+        x: isMobile ? 0 : -80, // se acerca hacia arriba
         scale: isMobile ? 0.9 : 1, // se acerca hacia arriba
         ease: "none",
         scrollTrigger: {
@@ -78,7 +78,7 @@ export default function AboutUsSection() {
     <>
       <div
         ref={sectionRef}
-        className="grid grid-cols-1 md:grid-cols-2 py-32 place-items-center gap-12 px-6"
+        className="grid grid-cols-1 md:grid-cols-2 !py-32 place-items-center gap-12 px-6"
       >
         <div ref={imageRef} className="w-full col-span-1">
           <Image
@@ -93,11 +93,11 @@ export default function AboutUsSection() {
         </div>
 
         <div ref={textRef} className="text-white col-span-1">
-          <h3 className="text-5xl md:text-7xl max-w-2xl font-bold !mb-6">
+          <h3 className="text-4xl md:text-5xl xl:text-7xl max-w-2xl font-bold !mb-6">
             El <span className="">motor</span> detrás del{" "}
-            <span className="text-[#F05928]">exito</span> de nuestros clientes
+            <span className="text-[#F05928]">éxito</span> de nuestros clientes
           </h3>
-          <p className="max-w-xl text-xl opacity-70 !mb-6">
+          <p className="max-w-xl text-lg lg:text-xl opacity-70 !mb-6">
             Somos un grupo de expertos en tecnología, automatización y
             crecimiento digital. Nuestra misión es transformar los retos del
             e-commerce en oportunidades de éxito, colaborando de cerca con
