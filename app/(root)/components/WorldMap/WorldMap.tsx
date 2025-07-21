@@ -5,7 +5,7 @@ export function WorldMapDemo() {
   return (
     <div className=" !py-4   w-full">
       <div className="flex flex-col items-center justify-center text-center">
-        <p className="font-bold max-w-4xl mx-auto text-xl md:text-6xl dark:text-white text-black px-4">
+        <p className="font-bold max-w-4xl mx-auto text-2xl md:text-6xl dark:text-white  !px-4">
           Contamos con clientes de todo el{" "}
           <span className="bg-gradient-to-r from-[#F05928] via-[#0373FF] to-[#A4A9F6] bg-clip-text text-transparent">
             {"MUNDO".split("").map((word, idx) => (
