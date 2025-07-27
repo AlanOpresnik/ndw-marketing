@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function HeroMain() {
   return (
-    <div className="relative  z-10 flex items-center justify-center h-[70vh] !px-6">
+    <div className="relative  z-10 flex items-center justify-center h-[80vh] !px-6">
       <div className="flex justify-center flex-col items-center">
         <div className=" border !mb-2 md:!mb-0 border-white w-fit !p-2 rounded-full">
           <p className="text-white font-semibold">Influenciando marcas</p>

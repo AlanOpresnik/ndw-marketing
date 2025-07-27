@@ -17,12 +17,24 @@ const marketingPhrases = [
 
 export default function Loader({ isLoaded }: { isLoaded: boolean }) {
   const [currentPhrase, setCurrentPhrase] = useState(0);
+  const [particles, setParticles] = useState<
+    { left: string; top: string; delay: string; duration: string }[]
+  >([]);
+
+  useEffect(() => {
+    const generated = Array.from({ length: 20 }, () => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      delay: `${Math.random() * 3}s`,
+      duration: `${3 + Math.random() * 2}s`,
+    }));
+    setParticles(generated);
+  }, []);
 
   useEffect(() => {
     const phraseInterval = setInterval(() => {
       setCurrentPhrase((prev) => (prev + 1) % marketingPhrases.length);
     }, 1500);
-
 
     return () => {
       clearInterval(phraseInterval);
@@ -88,7 +100,6 @@ export default function Loader({ isLoaded }: { isLoaded: boolean }) {
         </div>
 
         {/* Barra de progreso */}
-       
 
         {/* Puntos de carga */}
         <div className="flex justify-center space-x-2">
@@ -105,15 +116,15 @@ export default function Loader({ isLoaded }: { isLoaded: boolean }) {
 
       {/* Partículas flotantes */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {particles.map((p, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-white/30 rounded-full animate-float"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 2}s`,
+              left: p.left,
+              top: p.top,
+              animationDelay: p.delay,
+              animationDuration: p.duration,
             }}
           ></div>
         ))}

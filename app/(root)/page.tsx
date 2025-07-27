@@ -1,5 +1,4 @@
 import HeroMain from "./components/Hero";
-import { InfiniteMovingCardsDemo } from "./components/InfiteCarouselClients/InfiniteCarouselClients";
 import ScrollText from "./components/ScrollText/ScrollText";
 import DividerTextHuge from "./components/DividerTextHuge/DividerTextHuge";
 import AboutUsSection from "./components/AbourUsSection/AboutUsSection";
@@ -7,6 +6,9 @@ import PowBanner from "@/components/ui/infinite-moving-pharses";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import TestimonialsSection from "./components/TestimonialsSection/TestimonialsSection";
 import { WorldMapDemo } from "./components/WorldMap/WorldMap";
+import InfiniteBrandSlider from "./components/InfiteCarouselClients/ClientesWhitUs";
+import BentoGridServices from "./components/BentoGridServices/BentoGridServices";
+import PhotosSection from "./components/PhotosSection/PhotosSection";
 
 export default function Home() {
   return (
@@ -117,17 +119,17 @@ export default function Home() {
 
       {/* Main Content */}
       <div>
-        <div className="relative ">
+        <main className="relative ">
           <HeroMain />
           <div className="absolute  top-0 left-0 w-full h-full overflow-hidden ">
             <div className="w-72 h-72 bg-[#0373FF] opacity-20 rounded-full blur-3xl animate-pulse absolute top-20 left-20"></div>
             <div className="w-96 h-96 bg-[#f05a2881] opacity-10 rounded-full blur-3xl animate-pulse absolute bottom-10 right-10"></div>
           </div>
-        </div>
+        </main>
         <div className="mb-20">
-          <InfiniteMovingCardsDemo />
+          <InfiniteBrandSlider />
         </div>
-        <div className="">
+        <div className="!pt-20">
           <ScrollText />
         </div>
         <div>
@@ -149,6 +151,12 @@ export default function Home() {
         </section>
         <section className="!z-50">
           <TestimonialsSection/>
+        </section>
+        <section className="">
+          <BentoGridServices/>
+        </section>
+        <section>
+          <PhotosSection />
         </section>
       </div>
 

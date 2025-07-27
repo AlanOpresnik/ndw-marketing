@@ -94,14 +94,15 @@ export default function AboutUsSection() {
 
         <div ref={textRef} className="text-white col-span-1">
           <h3 className="text-4xl md:text-5xl xl:text-7xl max-w-2xl font-bold !mb-6">
-            El <span className="">motor</span> detrás del{" "}
-            <span className="text-[#F05928]">éxito</span> de nuestros clientes
+            Nuestra <span className="text-[#F05928]">Mision</span>
           </h3>
           <p className="max-w-xl text-lg lg:text-xl opacity-70 !mb-6">
-            Somos un grupo de expertos en tecnología, automatización y
-            crecimiento digital. Nuestra misión es transformar los retos del
-            e-commerce en oportunidades de éxito, colaborando de cerca con
-            marcas líderes en LATAM para impulsar resultados extraordinarios.
+            En NDW trabajamos para transformar ideas en marcas que inspiren,
+            comuniquen y perduren. Nos mueve conectar con la esencia de cada
+            cliente, aportando soluciones creativas, estratégicas y con una
+            mirada auténtica. Creemos en el diseño con propósito, en el
+            contenido que genera valor y en una comunicación que construye
+            vínculos reales.
           </p>
           <MainButton icon={<ArrowRightFromLine />} className="!mt-4">
             Trabajemos juntos

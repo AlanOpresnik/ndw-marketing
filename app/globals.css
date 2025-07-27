@@ -983,13 +983,17 @@ body {
  
 @theme inline {
   --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
- 
+
   @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
     to {
-      transform: translate(calc(-50% - 0.5rem));
+      transform: translateX(-50%);
     }
   }
 }
+
 
 @keyframes ping {
   0% { transform: scale(1); opacity: 1; }
@@ -1014,4 +1018,31 @@ body {
 .rgb-border-hover {
   animation: rgb-border 3s linear infinite;
   border-image-source: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+}
+
+@layer utilities {
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-slow {
+    animation: scroll 60s linear infinite;
+  }
+
+  .animate-scroll-medium {
+    animation: scroll 40s linear infinite;
+  }
+
+  .animate-scroll-fast {
+    animation: scroll 20s linear infinite;
+  }
+
+  .animate-scroll-reverse {
+    animation-direction: reverse;
+  }
 }

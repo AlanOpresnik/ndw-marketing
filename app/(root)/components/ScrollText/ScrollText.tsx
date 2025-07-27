@@ -95,14 +95,14 @@ export default function HeroScrollText() {
 
     tl.fromTo(
       ".icon",
-      { opacity: 0.5, y: -20 },
+      { opacity: 0.5, y: 60 },
       { opacity: 1, y: isMobile ? 590 : 200, x: iconX, duration: 10, ease: "power2.out" },
       0
     );
 
     tl.fromTo(
       ".icon2",
-      { opacity: 0.5, y: -20 },
+      { opacity: 0.5, y: 60 },
       { opacity: 1, y: isMobile ? 380 : 200 , x: icon2X, duration: 10, ease: "power2.out" },
       0
     );
