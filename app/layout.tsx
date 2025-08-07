@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "NDW AGENCIA DE MARKETING ",
   description:
     "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
+    icons: {
+      icon: '/favicon.ico'
+    },
   openGraph: {
     title: "NDW AGENCIA DE MARKETING",
     description: "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
