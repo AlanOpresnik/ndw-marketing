@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+   metadataBase: new URL('https://ndwagenciadigital.com'),
   title: "NDW AGENCIA DE MARKETING ",
   description:
     "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
