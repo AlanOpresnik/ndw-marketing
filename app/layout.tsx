@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
     images: [
       {
-        url: "/mockup-ndw.png", // Debe estar en la carpeta /public
+        url: "https://ndwagenciadigital.com/mockup-ndw.png",
         width: 1200,
         height: 630,
         alt: "NDW-AGENCIA DE MARKETING ",
