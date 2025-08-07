@@ -126,10 +126,10 @@ export default function Home() {
             <div className="w-96 h-96 bg-[#f05a2881] opacity-10 rounded-full blur-3xl animate-pulse absolute bottom-10 right-10"></div>
           </div>
         </main>
-        <div className="mb-20">
+        <div className="mb-0">
           <InfiniteBrandSlider />
         </div>
-        <div className="!pt-20">
+        <div className="!pt-0">
           <ScrollText />
         </div>
         <div>
@@ -152,7 +152,7 @@ export default function Home() {
         <section className="!z-50">
           <TestimonialsSection/>
         </section>
-        <section className="">
+        <section id="services" className="">
           <BentoGridServices/>
         </section>
         <section>

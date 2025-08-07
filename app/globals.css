@@ -1046,3 +1046,7 @@ body {
     animation-direction: reverse;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

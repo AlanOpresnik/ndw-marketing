@@ -11,7 +11,7 @@ export default function Navbar() {
         <a href="#" className="text-white hover:text-navy font-medium">
           Home
         </a>
-        <a href="#" className="text-white hover:text-navy font-medium">
+        <a href="#services" className="text-white hover:text-navy font-medium">
           Servicios
         </a>
         <a href="#" className="text-white hover:text-navy font-medium">

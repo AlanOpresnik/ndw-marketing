@@ -29,7 +29,7 @@ function BentoGridItem({
   return (
     <Card
       className={cn(
-        "bento-item opacity-0 translate-y-8 flex flex-col justify-between !p-6 bg-white/5 backdrop-blur-lg border border-neutral-700/50 text-neutral-50 shadow-xl transition-all",
+        "bento-item opacity-0  translate-y-8 flex flex-col justify-between !p-6 bg-white/5 backdrop-blur-lg border border-neutral-700/50 text-neutral-50 shadow-xl transition-all",
         className
       )}
     >

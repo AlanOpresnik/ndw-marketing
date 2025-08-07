@@ -45,8 +45,10 @@ const BrandSlider = ({
           >
             <Image
               src={brand.logo || "/placeholder.svg"}
+              width={400}
+              height={400}
               alt={brand.name}
-              className="h-42 w-auto object-cover opacity-70 hover:opacity-100 transition-opacity duration-300  hover:grayscale-0"
+              className="h-42 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300  hover:grayscale-0"
             />
           </div>
         ))}
@@ -58,6 +60,8 @@ const BrandSlider = ({
             <Image
               src={brand.logo || "/placeholder.svg"}
               alt={brand.name}
+              width={400}
+              height={400}
               className="h-42 w-auto object-cover opacity-70 hover:opacity-100 transition-opacity duration-300  hover:grayscale-0"
             />
           </div>
@@ -69,7 +73,7 @@ const BrandSlider = ({
 
 export default function InfiniteBrandSlider() {
   return (
-    <div className="min-h-screen !py-24">
+    <div className=" !py-20">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className=" mb-16">
