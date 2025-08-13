@@ -10,14 +10,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-   metadataBase: new URL('https://ndwagenciadigital.com'),
-  title: "NDW AGENCIA DE MARKETING ",
-  description:
-    "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
-    icons: {
-      icon: '/favicon.ico'
-    },
+  metadataBase: new URL('https://ndwagenciadigital.com'),
+  title: "NDW AGENCIA DE MARKETING",
+  description: "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
+  icons: {
+    icon: '/favicon.ico'
+  },
+  // OpenGraph mejorado
   openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    url: 'https://ndwagenciadigital.com',
+    siteName: 'NDW AGENCIA DE MARKETING',
     title: "NDW AGENCIA DE MARKETING",
     description: "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
     images: [
@@ -25,10 +29,26 @@ export const metadata: Metadata = {
         url: "https://ndwagenciadigital.com/mockup-ndw.png",
         width: 1200,
         height: 630,
-        alt: "NDW-AGENCIA DE MARKETING ",
+        alt: "NDW AGENCIA DE MARKETING",
+        type: "image/png",
       },
     ],
   },
+  // Twitter Cards (WhatsApp también las usa como fallback)
+  twitter: {
+    card: 'summary_large_image',
+    site: '@ndwagencia', // Cambia por tu handle de Twitter si tienes
+    title: "NDW AGENCIA DE MARKETING",
+    description: "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
+    images: ['https://ndwagenciadigital.com/mockup-ndw.png'],
+  },
+  // Meta tags adicionales para mejor compatibilidad
+  other: {
+    'og:image:secure_url': 'https://ndwagenciadigital.com/mockup-ndw.png',
+    'og:image:type': 'image/png',
+    'og:image:width': '1200',
+    'og:image:height': '630',
+  }
 };
 
 export default function RootLayout({
@@ -37,8 +57,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} `}>
+    <html lang="es">
+      <body className={`${inter.className}`}>
         <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
