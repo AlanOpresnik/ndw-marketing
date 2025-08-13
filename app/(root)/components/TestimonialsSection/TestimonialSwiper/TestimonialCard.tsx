@@ -15,7 +15,7 @@ interface Props {
 
 export default function TestimonialCard({ testimonial }: Props) {
   return (
-    <div className=" rounded-2xl !p-8 border bg-gradient-to-br from-transparent via-transparent to-gray-700 border-gray-700  flex flex-col lg:w-[700px] h-[490px] md:min-h-[550px]">
+    <div className="  rounded-2xl !p-8 border bg-gradient-to-br from-transparent via-transparent to-gray-700 border-gray-700  flex flex-col lg:w-[700px] min-h-[390px] ">
       {/* Rating Stars */}
       <div className="flex gap-1 !mb-6">
         {[...Array(testimonial.rating)].map((_, i) => (
@@ -24,9 +24,11 @@ export default function TestimonialCard({ testimonial }: Props) {
       </div>
 
       {/* Testimonial Text */}
-      <blockquote className="text-gray-200  md:text-2xl leading-relaxed !mb-8 flex-grow">
-        &quot;{testimonial.text}&quot;
-      </blockquote>
+      <div>
+        <blockquote className="text-gray-200  md:text-2xl leading-relaxed !mb-4 !flex-grow">
+          &quot;{testimonial.text}&quot;
+        </blockquote>
+      </div>
 
       {/* Author Info */}
       <div className="flex items-center justify-between !pt-6 border-t border-gray-700">
@@ -40,7 +42,9 @@ export default function TestimonialCard({ testimonial }: Props) {
           </div>
           <div>
             <div className="text-white font-semibold">{testimonial.author}</div>
-        <div className="text-gray-400 text-sm font-medium">{testimonial.company}</div>
+            <div className="text-gray-400 text-sm font-medium">
+              {testimonial.company}
+            </div>
           </div>
         </div>
       </div>

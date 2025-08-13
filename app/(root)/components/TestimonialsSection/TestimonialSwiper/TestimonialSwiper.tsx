@@ -59,8 +59,8 @@ export default function TestimonialsSwiper() {
   return (
     <section className=" min-h-screen !py-16 !px-4">
       <div className="w-full mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-white !mb-12 text-center md:text-left">
-          Lo que dicen nuestros clientes
+        <h2 className="text-4xl md:text-5xl font-bold text-white !mb-12 text-center ">
+          Testimonios de clientes
         </h2>
 
         <div className="relative">

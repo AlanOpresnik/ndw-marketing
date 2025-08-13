@@ -9,6 +9,8 @@ import { WorldMapDemo } from "./components/WorldMap/WorldMap";
 import InfiniteBrandSlider from "./components/InfiteCarouselClients/ClientesWhitUs";
 import BentoGridServices from "./components/BentoGridServices/BentoGridServices";
 import PhotosSection from "./components/PhotosSection/PhotosSection";
+import ImageBackgroundSection from "./components/ImageBackgroundSection/ImageBackgroundSection";
+import { ProyectsCarrousel } from "./components/ProyectsCarrousel/ProyectsCarrousel";
 
 export default function Home() {
   return (
@@ -119,7 +121,7 @@ export default function Home() {
 
       {/* Main Content */}
       <div>
-        <main className="relative ">
+        <main className="relative !mt-24">
           <HeroMain />
           <div className="absolute  top-0 left-0 w-full h-full overflow-hidden ">
             <div className="w-72 h-72 bg-[#0373FF] opacity-20 rounded-full blur-3xl animate-pulse absolute top-20 left-20"></div>
@@ -149,6 +151,9 @@ export default function Home() {
             <div className="w-96 h-96 bg-[#f05a2818] opacity-10 rounded-full blur-3xl animate-pulse absolute bottom-10 right-10"></div>
           </div>
         </section>
+        <section>
+          <ProyectsCarrousel/>
+        </section>
         <section className="!z-50">
           <TestimonialsSection/>
         </section>
@@ -158,6 +163,9 @@ export default function Home() {
         <section>
           <PhotosSection />
         </section>
+        <div>
+          <ImageBackgroundSection/>
+        </div>
       </div>
 
       {/* Enhanced Animated Background Gradient - RESTORED */}

@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
 import { cn } from "@/lib/utils";
 import MainButton from "@/components/shared/MainButton";
@@ -29,17 +29,18 @@ function BentoGridItem({
   return (
     <Card
       className={cn(
-        "bento-item opacity-0  translate-y-8 flex flex-col justify-between !p-6 bg-white/5 backdrop-blur-lg border border-neutral-700/50 text-neutral-50 shadow-xl transition-all",
+        "bento-item opacity-0 hover:!scale-102 hover:cursor-pointer hover:shadow-white/10 translate-y-8 flex flex-col justify-between !p-6 bg-white/5 backdrop-blur-lg border border-neutral-700/50 text-neutral-50 shadow-xl transition-all",
         className
       )}
     >
-      <CardHeader className="p-0 !pb-4">
+      <div className="flex flex-col gap-6">
         <div className="mb-4 ">{icon}</div>
         <CardTitle className="text-2xl font-bold">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="p-0 text-neutral-200">
-        <p className="text-base leading-relaxed">{description}</p>
-      </CardContent>
+
+        <CardContent className="p-0 text-neutral-200">
+          <p className="text-base leading-relaxed">{description}</p>
+        </CardContent>
+      </div>
     </Card>
   );
 }
@@ -47,7 +48,6 @@ function BentoGridItem({
 export default function BentoGridServices() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  
   useEffect(() => {
     if (!containerRef.current) return;
     const items = containerRef.current.querySelectorAll(".bento-item");
