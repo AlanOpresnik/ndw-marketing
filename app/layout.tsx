@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientWrapper from "@/components/ClientWrapper/ClientWrapper";
+import Navbar from "@/components/shared/Navbar/Navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,20 +11,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ndwagenciadigital.com'),
+  metadataBase: new URL("https://ndwagenciadigital.com"),
   title: "NDW AGENCIA DE MARKETING",
-  description: "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
+  description:
+    "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
   icons: {
-    icon: '/favicon.ico'
+    icon: "/favicon.ico",
   },
   // OpenGraph mejorado
   openGraph: {
-    type: 'website',
-    locale: 'es_ES',
-    url: 'https://ndwagenciadigital.com',
-    siteName: 'NDW AGENCIA DE MARKETING',
+    type: "website",
+    locale: "es_ES",
+    url: "https://ndwagenciadigital.com",
+    siteName: "NDW AGENCIA DE MARKETING",
     title: "NDW AGENCIA DE MARKETING",
-    description: "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
+    description:
+      "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
     images: [
       {
         url: "https://ndwagenciadigital.com/mockup-ndw.png",
@@ -36,19 +39,20 @@ export const metadata: Metadata = {
   },
   // Twitter Cards (WhatsApp también las usa como fallback)
   twitter: {
-    card: 'summary_large_image',
-    site: '@ndwagencia', // Cambia por tu handle de Twitter si tienes
+    card: "summary_large_image",
+    site: "@ndwagencia", // Cambia por tu handle de Twitter si tienes
     title: "NDW AGENCIA DE MARKETING",
-    description: "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
-    images: ['https://ndwagenciadigital.com/mockup-ndw.png'],
+    description:
+      "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
+    images: ["https://ndwagenciadigital.com/mockup-ndw.png"],
   },
   // Meta tags adicionales para mejor compatibilidad
   other: {
-    'og:image:secure_url': 'https://ndwagenciadigital.com/mockup-ndw.png',
-    'og:image:type': 'image/png',
-    'og:image:width': '1200',
-    'og:image:height': '630',
-  }
+    "og:image:secure_url": "https://ndwagenciadigital.com/mockup-ndw.png",
+    "og:image:type": "image/png",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+  },
 };
 
 export default function RootLayout({
@@ -59,7 +63,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.className}`}>
-        <ClientWrapper>{children}</ClientWrapper>
+        <ClientWrapper>
+          <Navbar />
+          {children}
+        </ClientWrapper>
       </body>
     </html>
   );

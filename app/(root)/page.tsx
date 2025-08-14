@@ -16,9 +16,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#111] text-gray-900 relative overflow-hidden">
       {/* Navigation */}
-      <div>
-        <Navbar />
-      </div>
+
 
       {/* Radial Lines Effect */}
       <div className="radial-lines">
