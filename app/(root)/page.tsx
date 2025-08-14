@@ -3,7 +3,6 @@ import ScrollText from "./components/ScrollText/ScrollText";
 import DividerTextHuge from "./components/DividerTextHuge/DividerTextHuge";
 import AboutUsSection from "./components/AbourUsSection/AboutUsSection";
 import PowBanner from "@/components/ui/infinite-moving-pharses";
-import Navbar from "@/components/shared/Navbar/Navbar";
 import TestimonialsSection from "./components/TestimonialsSection/TestimonialsSection";
 import { WorldMapDemo } from "./components/WorldMap/WorldMap";
 import InfiniteBrandSlider from "./components/InfiteCarouselClients/ClientesWhitUs";
