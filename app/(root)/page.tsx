@@ -8,7 +8,6 @@ import { WorldMapDemo } from "./components/WorldMap/WorldMap";
 import InfiniteBrandSlider from "./components/InfiteCarouselClients/ClientesWhitUs";
 import BentoGridServices from "./components/BentoGridServices/BentoGridServices";
 import PhotosSection from "./components/PhotosSection/PhotosSection";
-import ImageBackgroundSection from "./components/ImageBackgroundSection/ImageBackgroundSection";
 import { ProyectsCarrousel } from "./components/ProyectsCarrousel/ProyectsCarrousel";
 
 export default function Home() {
@@ -160,9 +159,6 @@ export default function Home() {
         <section className="!pt-24">
           <PhotosSection />
         </section>
-        <div>
-          <ImageBackgroundSection/>
-        </div>
       </div>
 
       {/* Enhanced Animated Background Gradient - RESTORED */}

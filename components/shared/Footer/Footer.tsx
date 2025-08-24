@@ -40,7 +40,7 @@ export default function Footer() {
                   href="#"
                   className="text-white hover:text-white/50 transition-colors text-sm"
                 >
-                  SEO & SEM
+                 Branding y Diseño Gráfico
                 </a>
               </li>
               <li>
@@ -48,7 +48,7 @@ export default function Footer() {
                   href="#"
                   className="text-white hover:text-white/50 transition-colors text-sm"
                 >
-                  Marketing de Contenidos
+                  Gestión de Redes Sociales
                 </a>
               </li>
               <li>
@@ -56,7 +56,7 @@ export default function Footer() {
                   href="#"
                   className="text-white hover:text-white/50 transition-colors text-sm"
                 >
-                  Redes Sociales
+                 Publicidad en Ads
                 </a>
               </li>
               <li>
@@ -64,7 +64,7 @@ export default function Footer() {
                   href="#"
                   className="text-white hover:text-white/50 transition-colors text-sm"
                 >
-                  Email Marketing
+                 Desarrollo Web
                 </a>
               </li>
               <li>
@@ -72,7 +72,31 @@ export default function Footer() {
                   href="#"
                   className="text-white hover:text-white/50 transition-colors text-sm"
                 >
-                  Publicidad Digital
+                  Producción Audiovisual
+                </a>
+              </li>
+                 <li>
+                <a
+                  href="#"
+                  className="text-white hover:text-white/50 transition-colors text-sm"
+                >
+                  Registro de Marcas patentes
+                </a>
+              </li>
+               <li>
+                <a
+                  href="#"
+                  className="text-white hover:text-white/50 transition-colors text-sm"
+                >
+                  Producción Audiovisual
+                </a>
+              </li>
+                 <li>
+                <a
+                  href="#"
+                  className="text-white hover:text-white/50 transition-colors text-sm"
+                >
+                  Etc
                 </a>
               </li>
             </ul>

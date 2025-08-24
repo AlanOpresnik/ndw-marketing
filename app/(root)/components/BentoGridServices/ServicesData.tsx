@@ -4,8 +4,6 @@ import {
   Megaphone,
   Code,
   Camera,
-  Mail,
-  BarChart,
   CopyrightIcon,
   Video,
   StretchHorizontal,
