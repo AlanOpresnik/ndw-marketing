@@ -109,56 +109,32 @@ export default function Footer() {
               <div className="flex items-center !space-x-3">
                 <Mail className="h-4 w-4 text-white" />
                 <span className="text-white text-sm">
-                  info@digitalboost.com
+                  info@ndw.com
                 </span>
               </div>
               <div className="flex items-center !space-x-3">
                 <Phone className="h-4 w-4 text-white" />
-                <span className="text-white text-sm">+34 900 123 456</span>
+                <span className="text-white text-sm">+54 900 123 456</span>
               </div>
               <div className="flex items-center !space-x-3">
                 <MapPin className="h-4 w-4 text-white" />
-                <span className="text-white text-sm">Madrid, España</span>
+                <span className="text-white text-sm">Argentina, Buenos Aires</span>
               </div>
             </div>
           </div>
 
           {/* Newsletter */}
-          <div className="!space-y-4">
-            <h3 className="text-lg font-semibold text-white">Newsletter</h3>
-            <p className="text-white text-sm">
-              Recibe las últimas tendencias en marketing digital
-            </p>
-            <div className="!space-y-2">
-              <Input
-                type="email"
-                placeholder="Tu email"
-                className="bg-white border-white"
-              />
-              <Button className="w-full bg-white hover:bg-white/50 text-white">
-                Suscribirse
-              </Button>
-            </div>
-          </div>
+          
+          
         </div>
 
         {/* Bottom Section */}
         <div className="!mt-12 !pt-8 border-t border-white">
           <div className="flex flex-col md:flex-row justify-between items-center !space-y-4 md:!space-y-0">
             <div className="text-white text-sm">
-              © 2024 DigitalBoost. Todos los derechos reservados.
+              © 2024 NDW. Todos los derechos reservados.
             </div>
-            <div className="flex space-x-6">
-              <a href="#" className="text-white transition-colors text-sm">
-                Política de Privacidad
-              </a>
-              <a href="#" className="text-white transition-colors text-sm">
-                Términos de Servicio
-              </a>
-              <a href="#" className="text-white transition-colors text-sm">
-                Cookies
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>
