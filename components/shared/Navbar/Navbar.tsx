@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import MainButton from "../MainButton";
+import { ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -29,8 +30,8 @@ export default function Navbar() {
             Contacto
           </Link>
         </div>
-        <MainButton href="/contactanos" className=" !px-4 !py-2 md:!px-6 md:!py-3 bg-navy text-white font-bold rounded-full hover:bg-primary-blue transition-colors">
-          Contáctanos →
+        <MainButton icon={<ArrowRight/>} href="/contactanos" className=" !px-4 !py-2 md:!px-6 md:!py-3 bg-navy text-white font-bold rounded-full hover:bg-primary-blue transition-colors">
+          Contáctanos
         </MainButton>
       </div>
     </nav>
