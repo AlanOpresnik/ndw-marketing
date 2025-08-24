@@ -50,18 +50,6 @@ export const services = [
     icon: <CopyrightIcon className="h-8 w-8" />,
   },
   {
-    title: "Email Marketing",
-    description:
-      "Diseñamos y ejecutamos campañas de email marketing personalizadas. Construimos relaciones duraderas con tus clientes y fomentamos la lealtad a tu marca.",
-    icon: <Mail className="h-8 w-8" />,
-  },
-  {
-    title: "Analítica Web",
-    description:
-      "Medimos y analizamos el rendimiento de tus activos digitales. Convertimos datos en insights accionables para optimizar tus estrategias y maximizar el retorno de inversión.",
-    icon: <BarChart className="h-8 w-8" />,
-  },
-  {
     title: "Creacion de contenido",
     description:
       "Nos encargamos de todo el proceso de producción de reels y videos para redes sociales: desde el guion y la grabación, hasta la edición final. Ya sea para pautas publicitarias o contenido orgánico, transformamos ideas en piezas dinámicas y efectivas.",

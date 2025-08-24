@@ -83,7 +83,7 @@ export default function AboutUsSection() {
         <div ref={imageRef} className="w-full col-span-1">
           <Image
             src={
-              "https://res.cloudinary.com/db3krhfka/image/upload/v1755994435/FullSizeRender_VSCO_2_uxa5ys.jpg"
+              "https://res.cloudinary.com/db3krhfka/image/upload/v1755994277/FEED-02_1_unjfgt.jpg"
             }
             alt="About Us"
             width={1200}
