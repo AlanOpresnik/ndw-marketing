@@ -1,7 +1,7 @@
 import React from "react";
 import { ContactForm } from "./components/ContactForm";
 import { ContactInfo } from "./components/ContactInfo";
-import WhyChooseNdw from "./components/WhyChooseNdw";
+import Image from "next/image";
 
 export default function ContactPage() {
   return (
@@ -50,8 +50,23 @@ export default function ContactPage() {
               <ContactInfo />
             </div>
           </div>
-          <div className="!mt-12">
-            <WhyChooseNdw />
+          <div className="!mt-24 gap-24 flex">
+            <div>
+              <Image
+                src={"/mockup-ndw.png"}
+                width={600}
+                height={600}
+                alt="mockUp NDW"
+              />
+            </div>
+            <div>
+              <p className="text-6xl text-white font-bold">Te gustaría formar parte del equipo? </p>
+              <p className="text-xl !mt-4 text-white/50 font-semibold">
+                si te entusiasma el mundo digital y sos creativ@, Envianos tu CV
+                y porfolio a:
+              </p>
+              <p className="text-5xl text-white font-bold">hola@ndw.digital</p>
+            </div>
           </div>
         </div>
       </div>

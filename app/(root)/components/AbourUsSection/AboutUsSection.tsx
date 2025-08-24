@@ -83,12 +83,12 @@ export default function AboutUsSection() {
         <div ref={imageRef} className="w-full col-span-1">
           <Image
             src={
-              "https://saucovision.com/images/WhatsApp%20Image%202024-07-29%20at%2020.22.47.jpeg"
+              "https://res.cloudinary.com/db3krhfka/image/upload/v1755994435/FullSizeRender_VSCO_2_uxa5ys.jpg"
             }
             alt="About Us"
             width={1200}
             height={400}
-            className="rounded-lg shadow-lg w-full"
+            className="rounded-lg shadow-lg w-full bg-gradient-to-tl from-black to-transparent"
           />
         </div>
 

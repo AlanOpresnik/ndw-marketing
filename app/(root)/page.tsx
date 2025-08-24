@@ -148,16 +148,16 @@ export default function Home() {
             <div className="w-96 h-96 bg-[#f05a2818] opacity-10 rounded-full blur-3xl animate-pulse absolute bottom-10 right-10"></div>
           </div>
         </section>
-        <section>
-          <ProyectsCarrousel/>
+        <section id="services" className="">
+          <BentoGridServices/>
         </section>
         <section className="!z-50">
           <TestimonialsSection/>
         </section>
-        <section id="services" className="">
-          <BentoGridServices/>
+        <section >
+          <ProyectsCarrousel/>
         </section>
-        <section>
+        <section className="!pt-24">
           <PhotosSection />
         </section>
         <div>

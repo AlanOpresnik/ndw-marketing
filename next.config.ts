@@ -35,6 +35,9 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname : 'www.pngarts.com'
+      },{
+        protocol:'https',
+        hostname:'res.cloudinary.com'
       }
     ]
   }

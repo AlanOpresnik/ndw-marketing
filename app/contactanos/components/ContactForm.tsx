@@ -4,8 +4,8 @@ import type React from "react";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Select from "react-select";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Card,
   CardContent,
@@ -15,9 +15,30 @@ import {
 } from "@/components/ui/card";
 import { CheckCircle, Send } from "lucide-react";
 
+type Option = {
+  value: string;
+  label: string;
+};
+
+const options: Option[] = [
+  { value: "seo", label: "SEO y Posicionamiento" },
+  { value: "sem", label: "Publicidad Digital (SEM)" },
+  { value: "social", label: "Redes Sociales" },
+  { value: "web", label: "Desarrollo Web" },
+  { value: "branding", label: "Branding Digital" },
+  { value: "analytics", label: "Analytics y Reporting" },
+  { value: "other", label: "Otro" },
+];
+
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [services, setServices] = useState<Option[]>([]);
+
+  const handleChange = (selected: readonly Option[] | null) => {
+    setServices(selected ? [...selected] : []);
+    
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,10 +79,11 @@ export function ContactForm() {
       <Card className="relative shadow-2xl bg-gradient-to-b from-white/90 to-green-100 border !p-4">
         <CardHeader>
           <CardTitle className=" text-3xl font-bold text-black/90">
-            Hablemos de tu proyecto
+            Hablemos!
           </CardTitle>
           <CardDescription className="text-lg text-gray-800">
-            Completa el formulario y discutamos cómo podemos elevar tu marca.
+            Completa este formulario y nos pondremos en contacto para enviarte
+            un presupuesto personalizado para que elevemos tu marca juntos.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -72,7 +94,7 @@ export function ContactForm() {
                   htmlFor="name"
                   className="text-sm font-medium text-black/90"
                 >
-                  Nombre *
+                  Nombre y apellido *
                 </label>
                 <Input
                   id="name"
@@ -86,7 +108,7 @@ export function ContactForm() {
                   htmlFor="company"
                   className="text-sm font-medium text-black/90"
                 >
-                  Empresa
+                  Nombre de Marca, Empresa o Proyecto *
                 </label>
                 <Input
                   id="company"
@@ -94,6 +116,22 @@ export function ContactForm() {
                   className="border-gray-700 !px-2 bg-gray-950/80 text-white placeholder:text-gray-500 focus:border-emerald-500 focus:ring-emerald-500/50"
                 />
               </div>
+            </div>
+
+            <div className="!space-y-2">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-black/90"
+              >
+                Si ya tiene redes sociales, déjanos el link! *
+              </label>
+              <Input
+                id="redes"
+                type="text"
+                placeholder="https://www.instagram.com/agencia.ndw"
+                required
+                className="border-gray-700  !px-2 bg-gray-950/80 text-white placeholder:text-gray-500 focus:border-emerald-500 focus:ring-emerald-500/50"
+              />
             </div>
 
             <div className="!space-y-2">
@@ -134,35 +172,53 @@ export function ContactForm() {
               >
                 Servicio de interés
               </label>
-              <select
-                id="service"
-                className="w-full !px-3 !py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 bg-gray-950/80 text-white"
-              >
-                <option value="">Selecciona un servicio</option>
-                <option value="seo">SEO y Posicionamiento</option>
-                <option value="sem">Publicidad Digital (SEM)</option>
-                <option value="social">Redes Sociales</option>
-                <option value="web">Desarrollo Web</option>
-                <option value="branding">Branding Digital</option>
-                <option value="analytics">Analytics y Reporting</option>
-                <option value="other">Otro</option>
-              </select>
-            </div>
 
-            <div className="!space-y-2">
-              <label
-                htmlFor="message"
-                className="text-sm font-medium text-black/90"
-              >
-                Mensaje *
-              </label>
-              <Textarea
-                id="message"
-                placeholder="Cuéntanos sobre tu proyecto, objetivos y cómo podemos ayudarte..."
-                required
-                rows={5}
-                className="border-gray-700 !p-2 bg-gray-950/80 text-white placeholder:text-gray-500 focus:border-emerald-500 focus:ring-emerald-500/50 resize-none"
+              <Select
+                id="service"
+                isMulti
+                options={options}
+                value={services}
+                onChange={handleChange}
+                placeholder="Selecciona uno o más servicios..."
+                className="text-black"
+                styles={{
+                  control: (base) => ({
+                    ...base,
+                    backgroundColor: "rgba(17, 24, 39, 0.8)", // bg-gray-950/80
+                    borderColor: "#374151", // border-gray-700
+                    padding: "4px",
+                  }),
+                  menu: (base) => ({
+                    ...base,
+                    backgroundColor: "#111827", // gris oscuro
+                    color: "white",
+                  }),
+                  multiValue: (base) => ({
+                    ...base,
+                    backgroundColor: "#10b98133", // verde translúcido
+                  }),
+                  multiValueLabel: (base) => ({
+                    ...base,
+                    color: "#10b981", // verde emerald
+                  }),
+                  option: (base, { isFocused, isSelected }) => ({ 
+                    ...base,
+                    backgroundColor: isSelected
+                      ? "#10b981"
+                      : isFocused
+                      ? "#10b98133"
+                      : "transparent",
+                    color: isSelected ? "white" : "white",
+                  }),
+                }}
               />
+
+              <p className="text-sm text-gray-400">
+                Seleccionaste:{" "}
+                {services.length > 0
+                  ? services.map((s) => s.label).join(", ")
+                  : "ninguno"}
+              </p>
             </div>
 
             <Button

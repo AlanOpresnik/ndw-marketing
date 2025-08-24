@@ -29,7 +29,7 @@ function BentoGridItem({
   return (
     <Card
       className={cn(
-        "bento-item opacity-0 hover:!scale-102 hover:cursor-pointer hover:shadow-white/10 translate-y-8 flex flex-col justify-between !p-6 bg-white/5 backdrop-blur-lg border border-neutral-700/50 text-neutral-50 shadow-xl transition-all",
+        "bento-item opacity-0 hover:!scale-102  hover:shadow-white/10 translate-y-8 flex flex-col justify-between !p-6 bg-white/5 backdrop-blur-lg border border-neutral-700/50 text-neutral-50 shadow-xl transition-all",
         className
       )}
     >
@@ -70,7 +70,7 @@ export default function BentoGridServices() {
   }, []);
 
   return (
-    <section className="w-full flex justify-center !py-12 md:!py-24 lg:!py-32 bg-neutral-950 text-neutral-50">
+    <section className="w-full flex justify-center !py-12 md:!py-24 lg:!py-32  text-neutral-50">
       <div className="container !px-4 md:!px-6 !z-10">
         <div className="text-center !mb-12">
           <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-ndw-green">
@@ -95,7 +95,7 @@ export default function BentoGridServices() {
         </div>
 
         <div className="flex justify-center !mt-12 z-10">
-          <MainButton icon={<ArrowRight />}>
+          <MainButton href="/contactanos" icon={<ArrowRight />}>
             Empezá a trabajar con nosotros
           </MainButton>
         </div>

@@ -14,9 +14,9 @@ export function WorldMapDemo() {
           </span>
         </p>
         <p className="text-sm md:text-lg text-neutral-500 max-w-4xl mx-auto !py-4 px-4">
-          Impulsamos marcas en todo el mundo, desde Alaska hasta Brasil, pasando
-          por Europa y Asia. Nuestra red global nos permite ofrecer soluciones
-          digitales adaptadas a las necesidades locales de cada cliente.
+          desde Europa hasta Latino America. Impulsamos marcas de todo el mundo,
+          no importa donde estes ofrecemos soluciones digitales adaptadas a la
+          necesidad de tu marca.
         </p>
       </div>
       <WorldMap

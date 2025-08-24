@@ -13,7 +13,7 @@ export default function HeroMain() {
           NEW DIGITAL WORLD
         </h1>
         <p className="text-white text-center  md:text-xl mt-6  delay-300">
-          Estrategias digitales que transforman negocios reales.
+          Estrategias digitales que transforman y crean marcas reales. 
         </p>
         <div className="!mt-8">
           <Link

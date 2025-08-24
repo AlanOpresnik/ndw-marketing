@@ -16,7 +16,7 @@ const testimonials = [
   {
     id: 1,
     rating: 5,
-    text: "La productividad de nuestro equipo se dispara con esta herramienta de mensajería. Su simplicidad facilita la toma de decisiones rápida y una colaboración fluida, esenciales para el rápido desarrollo de nuestros productos.",
+    text: "Antes de trabajar con el equipo, tenía miedo de que otra persona registrara el nombre de mi emprendimiento primero. Me acompañaron en todo el proceso de búsqueda, presentación y seguimiento, y hoy mi marca está protegida legalmente. Ahora puedo crecer tranquilo, sabiendo que mi identidad es solo mía",
     author: "Emily Rodriguez",
     position: "Emily Rodriguez, PinPoint",
     company: "PinPoint",
@@ -25,7 +25,7 @@ const testimonials = [
   {
     id: 2,
     rating: 5,
-    text: "Increíble plataforma que ha transformado completamente nuestra forma de trabajar. La interfaz intuitiva y las funcionalidades avanzadas nos han permitido optimizar todos nuestros procesos internos.",
+    text: "Yo me siento super bien con el trabajo. Me dan respuestas, me dan ideas. Posta que estoy re contenta. Me saqué un re peso de encima y además le dimos un re valor agregado a todo",
     author: "Carlos Mendoza",
     position: "Carlos Mendoza, TechFlow",
     company: "TechFlow",
@@ -34,7 +34,7 @@ const testimonials = [
   {
     id: 3,
     rating: 5,
-    text: "Una solución excepcional que superó todas nuestras expectativas. El soporte técnico es outstanding y la implementación fue sorprendentemente sencilla para todo nuestro equipo.",
+    text: "Muy contentos con los trabajos, No queria dejar de agradecerles, y reconocerles el trabajo. Los valoramos mucho.",
     author: "Ana García",
     position: "Ana García, InnovateLab",
     company: "InnovateLab",
@@ -43,7 +43,7 @@ const testimonials = [
   {
     id: 4,
     rating: 5,
-    text: "Desde que implementamos esta herramienta, nuestra eficiencia ha aumentado un 300%. Es exactamente lo que necesitábamos para escalar nuestro negocio de manera sostenible.",
+    text: "Estoy muy contenta, de verdad gracias. Es un contexto re dificil todo. Pero todo esto me entusiasma. Asi que muchas gracias de verdad.",
     author: "Miguel Torres",
     position: "Miguel Torres, ScaleUp",
     company: "ScaleUp",

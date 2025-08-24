@@ -215,13 +215,13 @@ export default function HeroScrollText() {
           <span className="highlight-orange">Marketing</span>
         </h2>
         <span className="headline text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight">
-          De{" "}
+          En un equipo{" "}
         </span>
         <span className="headline-gradient text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight bg-gradient-to-r from-[#F05928] via-[#0373FF] to-[#A4A9F6] bg-clip-text text-transparent">
-          Primera calidad
+          de verdad.
         </span>
         <p className="subtitle mt-4 sm:mt-6 text-base sm:text-xl text-neutral-500">
-          difícil de encontrar en un solo proveedor.
+          No solo queremos generar visualizaciones sino una comunidad para tu marca. 
         </p>
 
         <MainButton

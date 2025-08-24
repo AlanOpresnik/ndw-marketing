@@ -78,11 +78,10 @@ export default function InfiniteBrandSlider() {
         {/* Header */}
         <div className=" mb-16">
           <h1 className="text-4xl font-bold text-white text-center !mb-4">
-            Marcas que Confían en Nosotros
+            Marcas que confían en nosotros
           </h1>
           <p className="text-xl text-gray-600 !mb-16 text-center mx-auto ">
-            Más de 200 empresas líderes utilizan nuestros servicios para
-            impulsar su crecimiento
+            Con más de 6 años de experiencia y 30 marcas que nos han elegido.
           </p>
         </div>
 

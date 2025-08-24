@@ -7,6 +7,8 @@ import {
   Mail,
   BarChart,
   CopyrightIcon,
+  Video,
+  StretchHorizontal,
 } from "lucide-react";
 
 export const services = [
@@ -59,4 +61,16 @@ export const services = [
       "Medimos y analizamos el rendimiento de tus activos digitales. Convertimos datos en insights accionables para optimizar tus estrategias y maximizar el retorno de inversión.",
     icon: <BarChart className="h-8 w-8" />,
   },
+  {
+    title: "Creacion de contenido",
+    description:
+      "Nos encargamos de todo el proceso de producción de reels y videos para redes sociales: desde el guion y la grabación, hasta la edición final. Ya sea para pautas publicitarias o contenido orgánico, transformamos ideas en piezas dinámicas y efectivas.",
+    icon: <Video />,
+  },
+  {
+    title: "MKT con influencers y streams",
+    description:
+      "Conectamos tu marca con influencers que realmente llegan a tu público. Armamos la campaña, definimos la estrategia y medimos los resultados para que tu inversión tenga impacto real. ¿Querés aparecer en los streams más vistos de Argentina? 🚀 Te acompañamos desde la idea creativa hasta la acción final para que tu marca esté presente donde todos miran. ",
+    icon: <StretchHorizontal/>
+      },
 ];
