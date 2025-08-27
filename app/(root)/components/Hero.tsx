@@ -17,7 +17,7 @@ export default function HeroMain() {
         </p>
         <div className="!mt-8">
           <Link
-            href="/contacto"
+            href="/contactanos"
             className="items-center cursor-pointer gap-2 !px-6 !py-3 bg-gradient-to-r from-[#F05928] to-[#0373FF] text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-transform"
           >
             Contáctanos →

@@ -104,7 +104,7 @@ export default function AboutUsSection() {
             contenido que genera valor y en una comunicación que construye
             vínculos reales.
           </p>
-          <MainButton icon={<ArrowRightFromLine />} className="!mt-4">
+          <MainButton href="/contactanos" icon={<ArrowRightFromLine />} className="!mt-4">
             Trabajemos juntos
           </MainButton>
         </div>

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Select from "react-select";
 import { Input } from "@/components/ui/input";
+import { services as servicios } from "@/app/(root)/components/BentoGridServices/ServicesData";
 import {
   Card,
   CardContent,
@@ -17,18 +18,13 @@ import { CheckCircle, Send } from "lucide-react";
 
 type Option = {
   value: string;
-  label: string;
+  label:string;
 };
+const serviciosOptions = servicios.map((s) => ({
+  value: s.title,
+  label: s.title,
+}));
 
-const options: Option[] = [
-  { value: "seo", label: "SEO y Posicionamiento" },
-  { value: "sem", label: "Publicidad Digital (SEM)" },
-  { value: "social", label: "Redes Sociales" },
-  { value: "web", label: "Desarrollo Web" },
-  { value: "branding", label: "Branding Digital" },
-  { value: "analytics", label: "Analytics y Reporting" },
-  { value: "other", label: "Otro" },
-];
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -176,7 +172,7 @@ export function ContactForm() {
               <Select
                 id="service"
                 isMulti
-                options={options}
+                options={serviciosOptions}
                 value={services}
                 onChange={handleChange}
                 placeholder="Selecciona uno o más servicios..."

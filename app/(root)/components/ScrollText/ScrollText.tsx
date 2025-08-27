@@ -225,6 +225,7 @@ export default function HeroScrollText() {
         </p>
 
         <MainButton
+        href="/contactanos"
           className="btn-cta mt-6 sm:mt-8 mx-auto block  text-sm sm:text-base"
           icon={<ArrowRightFromLine />}
         >
