@@ -22,7 +22,7 @@ export default function Loader({ isLoaded }: { isLoaded: boolean }) {
         <Image src={"/logo.webp"} width={600} height={600} alt="logo" />
       </div>
       <div>
-        <p className="text-white text-6xl ">Preparando todo para vos</p>
+        <p className="text-white text-6xl text-center">Preparando todo para vos</p>
       </div>
     </div>
   );

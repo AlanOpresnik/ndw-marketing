@@ -181,7 +181,7 @@ export default function HeroScrollText() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[120vh] bg-gradient-to-b from-[#131213] via-[#131213] to-transparent text-white flex items-center justify-center overflow-hidden px-4"
+      className="min-h-[120vh] bg-gradient-to-b from-[#131213] via-[#131213] to-transparent text-white flex items-center justify-center overflow-hidden px-4 !z-50"
     >
       {/* Íconos animados */}
       <Image
@@ -209,7 +209,7 @@ export default function HeroScrollText() {
       </div>
 
       {/* Contenido */}
-      <div className="text-center px-4 max-w-3xl mx-auto">
+      <div className="text-center px-4 max-w-3xl mx-auto !z-50" >
         <h2 className="headline text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight">
           Accedé a <span className="highlight-yellow">Talento</span> y{" "}
           <span className="highlight-orange">Marketing</span>
@@ -226,7 +226,7 @@ export default function HeroScrollText() {
 
         <MainButton
         href="/contactanos"
-          className="btn-cta mt-6 sm:mt-8 mx-auto block  text-sm sm:text-base"
+          className="btn-cta mt-6 sm:mt-8 mx-auto block  text-sm sm:text-base !z-50"
           icon={<ArrowRightFromLine />}
         >
           Empecemos a trabajar juntos
