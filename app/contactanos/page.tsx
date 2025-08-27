@@ -1,11 +1,11 @@
 import React from "react";
 import { ContactForm } from "./components/ContactForm";
 import { ContactInfo } from "./components/ContactInfo";
-import Image from "next/image";
+import TeamRecruitment from "./components/TeamRecuitment/TeamRecruitment";
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen flex justify-center items-center !pt-32 bg-gradient-to-br  bg-[#111] ">
+    <main className="min-h-screen flex justify-center items-center !pt-32 bg-gradient-to-br  bg-[#111] overflow-hidden">
       {/* Header */}
       <div className=" fixed inset-0 overflow-hidden rounded-lg h-full">
         <div className="absolute -top-4 -left-4 w-24 h-24 bg-emerald-400/20 rounded-full blur-xl animate-pulse"></div>
@@ -26,9 +26,9 @@ export default function ContactPage() {
       </div>
       {/* Main Content */}
       <div className="!px-6 !pb-16">
-        <div className="max-w-7xl mx-auto">
+        <div className="md:max-w-7xl mx-auto !px-4">
           {/* Hero Section */}
-          <div className="text-center !mb-16">
+          <div className="text-center !mt-12 md:!mt-2 !mb-16 !px-4">
             <h1 className="text-white text-5xl md:text-6xl font-bold text-foreground !mb-6">
               Conectemos
             </h1>
@@ -39,7 +39,7 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Section */}
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid  lg:grid-cols-2 gap-16 items-start ">
             {/* Contact Form */}
             <div className="order-2 lg:order-1">
               <ContactForm />
@@ -50,25 +50,8 @@ export default function ContactPage() {
               <ContactInfo />
             </div>
           </div>
-          <div className="!mt-24 gap-24 flex">
-            <div>
-              <Image
-                src={"/mockup-ndw.png"}
-                width={600}
-                height={600}
-                alt="mockUp NDW"
-              />
-            </div>
-            <div>
-              <p className="text-6xl text-white font-bold">Te gustaría formar parte del equipo? </p>
-              <p className="text-xl !mt-4 text-white/50 font-semibold">
-                si te entusiasma el mundo digital y sos creativ@, Envianos tu CV
-                y porfolio a:
-              </p>
-              <p className="text-5xl text-white font-bold">hola@ndw.digital</p>
-            </div>
-          </div>
         </div>
+         <TeamRecruitment/>
       </div>
     </main>
   );

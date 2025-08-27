@@ -42,7 +42,7 @@ export const services = [
     icon: <Camera className="h-8 w-8" />,
   },
   {
-    title: "Registro de Marca y Patentes",
+    title: "Registro de Marca y Contratos",
     description:
       "Asesoramiento y gestión para proteger legalmente tu marca y tus productos.",
     icon: <CopyrightIcon className="h-8 w-8" />,

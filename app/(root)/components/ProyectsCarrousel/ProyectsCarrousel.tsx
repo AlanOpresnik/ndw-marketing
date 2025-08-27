@@ -32,18 +32,7 @@ const slides: CarouselSlide[] = [
     title: "Fotografia profesional",
     description: "Fotografia profesional para todos los lugares",
   },
-  {
-    id: 4,
-    image: "/backgroundImage.jpg",
-    title: "Tecnología Avanzada",
-    description: "El futuro está aquí, experiméntalo hoy",
-  },
-  {
-    id: 5,
-    image: "/backgroundImage.jpg",
-    title: "Océano Infinito",
-    description: "Sumérgete en la serenidad del mar",
-  },
+
 ];
 
 export const ProyectsCarrousel = () => {

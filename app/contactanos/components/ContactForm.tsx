@@ -76,10 +76,10 @@ export function ContactForm() {
     <div className="relative">
       {/* Animated background lights */}
 
-      <Card className="relative shadow-2xl bg-gradient-to-b from-white/90 to-green-100 border !p-4">
+      <Card className=" shadow-2xl bg-gradient-to-b rounded-xl from-white/90 to-green-100 border !p-4">
         <CardHeader>
           <CardTitle className=" text-3xl font-bold text-black/90">
-            Hablemos!
+            Hablemos 👋
           </CardTitle>
           <CardDescription className="text-lg text-gray-800">
             Completa este formulario y nos pondremos en contacto para enviarte
@@ -108,7 +108,7 @@ export function ContactForm() {
                   htmlFor="company"
                   className="text-sm font-medium text-black/90"
                 >
-                  Nombre de Marca, Empresa o Proyecto *
+                  Marca, Empresa o Proyecto *
                 </label>
                 <Input
                   id="company"

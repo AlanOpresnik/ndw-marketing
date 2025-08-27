@@ -16,7 +16,7 @@ export function ContactInfo() {
               </div>
               <div>
                 <p className="font-medium text-black/90">Email</p>
-                <p className="text-black/60">hola@ndw.digital</p>
+                <p className="text-black/60">ndw.agencia@gmail.com</p>
               </div>
             </div>
 
@@ -26,7 +26,7 @@ export function ContactInfo() {
               </div>
               <div>
                 <p className="font-medium text-black/90">Teléfono</p>
-                <p className="text-black/70">+54 900 123 456</p>
+                <p className="text-black/70">+54 11 69 98 55 66</p>
               </div>
             </div>
 
