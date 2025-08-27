@@ -12,50 +12,72 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://ndwagenciadigital.com"),
-  title: "NDW AGENCIA DE MARKETING",
+  title: "NDW Agencia de Marketing | Impulsa tu Marca al Éxito",
   description:
-    "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
+    "En NDW Agencia Digital transformamos tu marca, aumentando tu visibilidad y presencia online con estrategias efectivas de marketing digital.",
+  keywords: [
+    "marketing digital",
+    "agencia digital",
+    "branding",
+    "publicidad online",
+    "NDW",
+    "estrategias digitales",
+    "redes sociales",
+  ],
+  authors: [
+    { name: "NDW Agencia de Marketing", url: "https://ndwagenciadigital.com" },
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   icons: {
     icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
   },
-  // OpenGraph mejorado
   openGraph: {
     type: "website",
     locale: "es_ES",
     url: "https://ndwagenciadigital.com",
-    siteName: "NDW AGENCIA DE MARKETING",
-    title: "NDW AGENCIA DE MARKETING",
+    siteName: "NDW Agencia de Marketing",
+    title: "NDW Agencia de Marketing | Impulsa tu Marca al Éxito",
     description:
-      "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
+      "Transformamos tu marca con estrategias digitales efectivas y asesoramiento personalizado para que llegues al éxito online.",
     images: [
       {
-        url: "/mockup-ndw.png",
+        url: "https://ndwagenciadigital.com/mockup-ndw.png",
         width: 1200,
         height: 630,
-        alt: "NDW AGENCIA DE MARKETING",
+        alt: "NDW Agencia de Marketing - Estrategias Digitales",
         type: "image/png",
       },
     ],
   },
-  // Twitter Cards (WhatsApp también las usa como fallback)
   twitter: {
     card: "summary_large_image",
-    site: "@ndwagencia", // Cambia por tu handle de Twitter si tienes
-    title: "NDW AGENCIA DE MARKETING",
+    site: "@ndwagencia",
+    creator: "@ndwagencia",
+    title: "NDW Agencia de Marketing | Impulsa tu Marca al Éxito",
     description:
-      "En New Digital World nos encargamos de influenciar tu marca y llevarla al exito",
+      "Transformamos tu marca con estrategias digitales efectivas y asesoramiento personalizado.",
     images: ["https://ndwagenciadigital.com/mockup-ndw.png"],
   },
-  // Meta tags adicionales para mejor compatibilidad
   other: {
     "og:image:secure_url": "https://ndwagenciadigital.com/mockup-ndw.png",
     "og:image:type": "image/png",
     "og:image:width": "1200",
     "og:image:height": "630",
+    "theme-color": "#0d0d0d",
   },
 };
+
 
 export default function RootLayout({
   children,
