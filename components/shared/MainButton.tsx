@@ -5,11 +5,13 @@ interface Props {
   icon?: React.ReactNode;
   className?: string;
   href?:string;
+  onClick?: () => void;
 }
 
-export default function MainButton({ children, icon, className,href }: Props) {
+export default function MainButton({ children, icon, className,href, onClick }: Props) {
   return (
     <a
+    onClick={onClick}
     href={href || ''}
       className={`${className} !px-6 w-fit cursor-pointer flex gap-2 !py-3 bg-navy text-white font-bold rounded-full hover:bg-primary-blue transition-colors`}
     >

@@ -5,6 +5,7 @@ import "./globals.css";
 import ClientWrapper from "@/components/ClientWrapper/ClientWrapper";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
+import MobileNavbar from "@/components/shared/Navbar/MobileNavbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,9 +66,14 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.className}`}>
         <ClientWrapper>
-          <Navbar />
+          <div className="invisible md:visible">
+            <Navbar />
+          </div>
+          <div className="visible md:invisible">
+            <MobileNavbar/>
+          </div>
           {children}
-          <Footer/>
+          <Footer />
         </ClientWrapper>
       </body>
     </html>
