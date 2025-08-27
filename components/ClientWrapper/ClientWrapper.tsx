@@ -1,12 +1,16 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
-import gsap from "gsap"
-import Loader from "../shared/loader/Loader"
+import { useEffect, useState, useRef } from "react";
+import gsap from "gsap";
+import Loader from "../shared/loader/Loader";
 
-export default function ClientWrapper({ children }: { children: React.ReactNode }) {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const loaderRef = useRef<HTMLDivElement>(null)
+export default function ClientWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const loaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleLoad = () => {
@@ -17,16 +21,16 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
         duration: 0.7,
         ease: "power2.out",
         onComplete: () => setIsLoaded(true),
-      })
-    }
+      });
+    };
 
     if (document.readyState === "complete") {
-      handleLoad()
+      handleLoad();
     } else {
-      window.addEventListener("load", handleLoad)
-      return () => window.removeEventListener("load", handleLoad)
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
     }
-  }, [])
+  }, []);
 
   return (
     <>
@@ -35,9 +39,13 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
           <Loader isLoaded={false} />
         </div>
       )}
-      <div className={`${!isLoaded ? "opacity-20 pointer-events-none" : "opacity-100"} transition-opacity duration-700`}>
+      <div
+        className={`${
+          !isLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
+        } transition-opacity duration-700`}
+      >
         {children}
       </div>
     </>
-  )
+  );
 }

@@ -28,7 +28,7 @@ const testimonials = [
     text: "Yo me siento super bien con el trabajo. Me dan respuestas, me dan ideas. Posta que estoy re contenta. Me saqué un re peso de encima y además le dimos un re valor agregado a todo",
     author: "Sol",
     position: "Sol, CrediOn",
-    company: "TechFlow",
+    company: "CrediOn",
     avatar: "https://avatar.iran.liara.run/public",
   },
   {
