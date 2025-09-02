@@ -5,7 +5,7 @@ import { ArrowRightFromLine } from "lucide-react";
 
 export default function HeroScrollText() {
   return (
-    <section className="min-h-[120vh] relative bg-gradient-to-b from-[#131213] via-[#131213] to-transparent text-white flex items-center justify-center overflow-hidden px-4 !z-50">
+    <section className="min-h-[120vh] relative bg-gradient-to-b from-[#131213] via-[#131213] to-transparent text-white flex items-center justify-center overflow-hidden px-4 !z-20">
       {/* Íconos fijos */}
       <Image
         src="/mano-icon.png"
@@ -50,7 +50,7 @@ export default function HeroScrollText() {
 
         <MainButton
           href="/contactanos"
-          className="!mt-6 sm:!mt-8 mx-auto block text-sm sm:text-base !z-50"
+          className="!mt-6 sm:!mt-8 mx-auto block text-sm sm:text-base !z-20"
           icon={<ArrowRightFromLine />}
         >
           Empecemos a trabajar juntos
