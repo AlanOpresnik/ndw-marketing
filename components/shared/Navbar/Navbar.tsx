@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <nav className="fixed  w-full glass-nav !mx-auto">
+    <nav className="fixed  w-full glass-nav !mx-auto !z-[200]">
       <div className="relative z-10 flex justify-between  items-center !p-2  !md:p-8">
         <div className="flex items-center gap-2">
           <Link href={'/'}>
