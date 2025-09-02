@@ -1,4 +1,5 @@
 import { Instagram, Mail, Phone, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -42,12 +43,12 @@ export default function Footer() {
                 "Etc",
               ].map((service, i) => (
                 <li key={i}>
-                  <a
+                  <Link
                     href="/#services"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
