@@ -12,43 +12,79 @@ export default function DividerTextHuge() {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // gsap.context se encarga de limpiar las animaciones al desmontar el componente
     const ctx = gsap.context(() => {
       const [text1, text2] = containerRef.current!.querySelectorAll("span");
 
-      gsap.fromTo(
-        text1,
-        { x: -70 },
-        {
-          x: 20,
-          ease: "none",
-          scrollTrigger: {
-            trigger: text1,
-            start: "top 80%",
-            end: "bottom top",
-            scrub: true,
-            // markers: true, // descomenta si querés debug
-          },
-        }
-      );
+      // MatchMedia de GSAP para desktop y mobile
+      ScrollTrigger.matchMedia({
+        // Desktop
+        "(min-width: 768px)": () => {
+          gsap.fromTo(
+            text1,
+            { x: -70 },
+            {
+              x: 40,
+              ease: "none",
+              scrollTrigger: {
+                trigger: text1,
+                start: "top 80%",
+                end: "bottom top",
+                scrub: true,
+              },
+            }
+          );
 
-      gsap.fromTo(
-        text2,
-        { x: 70 },
-        {
-          x: -20,
-          ease: "none",
-          scrollTrigger: {
-            trigger: text2,
-            start: "top 80%",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
-      );
+          gsap.fromTo(
+            text2,
+            { x: 70 },
+            {
+              x: -420,
+              ease: "none",
+              scrollTrigger: {
+                trigger: text2,
+                start: "top 80%",
+                end: "bottom top",
+                scrub: true,
+              },
+            }
+          );
+        },
+        // Mobile
+        "(max-width: 767px)": () => {
+          gsap.fromTo(
+            text1,
+            { x: -70 },
+            {
+              x: 20,
+              ease: "none",
+              scrollTrigger: {
+                trigger: text1,
+                start: "top 80%",
+                end: "bottom top",
+                scrub: true,
+              },
+            }
+          );
+
+          gsap.fromTo(
+            text2,
+            { x: 70 },
+            {
+              x: -20,
+              ease: "none",
+              scrollTrigger: {
+                trigger: text2,
+                start: "top 80%",
+                end: "bottom top",
+                scrub: true,
+              },
+            }
+          );
+        },
+      });
     }, containerRef);
 
-    return () => ctx.revert(); // <- Limpieza automática
+    return () => ctx.revert(); // limpieza automática
   }, []);
 
   return (

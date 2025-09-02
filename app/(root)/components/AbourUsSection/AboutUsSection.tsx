@@ -48,7 +48,7 @@ export default function AboutUsSection() {
             titleRef.current,
             { x: 1200, opacity: 0.6 },
             {
-              x: 1000,
+              x: 600,
               opacity: 1,
               scrollTrigger: {
                 trigger: titleRef.current,
@@ -152,7 +152,7 @@ export default function AboutUsSection() {
           className="text-[3rem] w-full md:text-[6rem] lg:text-[8rem] xl:text-[10rem] text-center font-bold bg-gradient-to-r from-[#F05928] via-[#0373FF] to-[#A4A9F6] bg-clip-text text-transparent will-change-transform"
         >
           <span className="block md:hidden">NEW DIGITAL</span>
-          <span className="hidden md:block">NEW DIGITAL WORLD</span>
+          <span className="hidden md:block">NEW DIGITAL </span>
         </h1>
       </div>
     </>
