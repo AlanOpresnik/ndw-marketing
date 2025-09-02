@@ -1,9 +1,4 @@
-import {
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -48,7 +43,7 @@ export default function Footer() {
               ].map((service, i) => (
                 <li key={i}>
                   <a
-                    href="#"
+                    href="/#services"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
                     {service}
@@ -64,11 +59,23 @@ export default function Footer() {
             <ul className="!space-y-3 text-sm">
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-gray-400" />
-                <span>ndw.agencia@gmail.com</span>
+                <a
+                  href="mailto:ndw.agencia@gmail.com"
+                  className="hover:underline hover:text-ndw-green transition-colors"
+                >
+                  ndw.agencia@gmail.com
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-gray-400" />
-                <span>+54 11 69 98 55 66</span>
+                <a
+                  href="https://wa.me/541169985566"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-ndw-green transition-colors"
+                >
+                  +54 11 69 98 55 66
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 text-gray-400" />
@@ -104,7 +111,6 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="!mt-12 !pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           <p>© 2025 NDW. Todos los derechos reservados.</p>
-      
         </div>
       </div>
     </footer>

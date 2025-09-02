@@ -5,6 +5,7 @@ import type { EmblaCarouselType } from 'embla-carousel';
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface CarouselSlide {
   id: number;
@@ -103,9 +104,11 @@ export const ProyectsCarrousel = () => {
           {slides.map((slide) => (
             <div key={slide.id} className="flex-[0_0_100%] relative">
               <div className="relative w-full h-[440px]  xl:h-[800px] md:aspect-video group">
-                <img
+                <Image
                   src={slide.image}
                   alt={slide.title}
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover object-[center_29%]  transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-overlay opacity-60" />

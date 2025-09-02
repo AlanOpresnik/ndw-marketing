@@ -5,11 +5,12 @@ import React from "react";
 export default function PhotosSection() {
   return (
     <div className="md:grid grid-cols-2 gap-12 !p-12 !z-10">
-      <div>
+      <div className="h-[600px]">
         <Image
           width={700}
           height={700}
           alt="Imagen de trago"
+          className="h-[600px] object-cover rounded-xl"
           src={"/photoCupLemon.jpg"}
         />
       </div>

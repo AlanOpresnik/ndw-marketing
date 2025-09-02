@@ -15,7 +15,6 @@ export default function Home() {
     <div className="min-h-screen bg-[#111] text-gray-900 relative overflow-hidden">
       {/* Navigation */}
 
-
       {/* Radial Lines Effect */}
       <div className="radial-lines">
         {Array.from({ length: 40 }, (_, i) => (
@@ -41,39 +40,22 @@ export default function Home() {
         <div className="line line-10"></div>
         <div className="line line-11"></div>
         <div className="line line-12"></div>
+         <div className="line line-13"></div>
+        <div className="line line-14"></div>
+        <div className="line line-15"></div>
+        <div className="line line-16"></div>
+        <div className="line line-17"></div>
+
       </div>
 
-      {/* More Floating Bubbles - RESTORED */}
-      <div className="particles">
-        <div className="particle particle-1"></div>
-        <div className="particle particle-2"></div>
-        <div className="particle particle-3"></div>
-        <div className="particle particle-4"></div>
-        <div className="particle particle-5"></div>
-        <div className="particle particle-6"></div>
-        <div className="particle particle-7"></div>
-        <div className="particle particle-8"></div>
-        <div className="particle particle-9"></div>
-        <div className="particle particle-10"></div>
-        <div className="particle particle-11"></div>
-        <div className="particle particle-12"></div>
-        <div className="particle particle-13"></div>
-        <div className="particle particle-14"></div>
-        <div className="particle particle-15"></div>
-      </div>
-
-      {/* Enhanced Geometric Elements - RESTORED */}
-      <div className="geometric-elements">
-        <div className="geo-element circle-1"></div>
-        <div className="geo-element circle-2"></div>
-        <div className="geo-element circle-3"></div>
-        <div className="geo-element square-1"></div>
-        <div className="geo-element square-2"></div>
-        <div className="geo-element triangle-1"></div>
-      </div>
 
       {/* More Connection Lines - RESTORED */}
       <div className="connection-lines">
+        <div className="connection-line line-horizontal-1"></div>
+        <div className="connection-line line-horizontal-2"></div>
+        <div className="connection-line line-diagonal-1"></div>
+        <div className="connection-line line-diagonal-2"></div>
+        <div className="connection-line line-vertical-1"></div>
         <div className="connection-line line-horizontal-1"></div>
         <div className="connection-line line-horizontal-2"></div>
         <div className="connection-line line-diagonal-1"></div>
@@ -87,32 +69,6 @@ export default function Home() {
         <div className="orb orb-2"></div>
         <div className="orb orb-3"></div>
         <div className="orb orb-4"></div>
-      </div>
-
-      {/* Floating Bubbles Background - RESTORED */}
-      <div className="bubbles">
-        <div className="bubble bubble-1"></div>
-        <div className="bubble bubble-2"></div>
-        <div className="bubble bubble-3"></div>
-        <div className="bubble bubble-4"></div>
-        <div className="bubble bubble-5"></div>
-        <div className="bubble bubble-6"></div>
-        <div className="bubble bubble-7"></div>
-        <div className="bubble bubble-8"></div>
-        <div className="bubble bubble-9"></div>
-        <div className="bubble bubble-10"></div>
-      </div>
-
-      {/* Decorative Dots - RESTORED */}
-      <div className="decorative-dots">
-        <div className="dot dot-1"></div>
-        <div className="dot dot-2"></div>
-        <div className="dot dot-3"></div>
-        <div className="dot dot-4"></div>
-        <div className="dot dot-5"></div>
-        <div className="dot dot-6"></div>
-        <div className="dot dot-7"></div>
-        <div className="dot dot-8"></div>
       </div>
 
       {/* Main Content */}
@@ -148,13 +104,13 @@ export default function Home() {
           </div>
         </section>
         <section id="services" className="">
-          <BentoGridServices/>
+          <BentoGridServices />
         </section>
         <section className="!z-50">
-          <TestimonialsSection/>
+          <TestimonialsSection />
         </section>
-        <section >
-          <ProyectsCarrousel/>
+        <section>
+          <ProyectsCarrousel />
         </section>
         <section className="!pt-24">
           <PhotosSection />

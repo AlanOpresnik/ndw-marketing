@@ -18,7 +18,7 @@ export default function Navbar() {
             Inicio
           </Link>
           <Link
-            href="#services"
+            href="/#services"
             className="text-white hover:text-navy font-medium"
           >
             Servicios

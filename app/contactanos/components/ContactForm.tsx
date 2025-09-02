@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Select from "react-select";
@@ -14,17 +13,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CheckCircle, Send } from "lucide-react";
+import { ArrowRight, CheckCircle, Send } from "lucide-react";
+import emailjs from "emailjs-com";
+import MainButton from "@/components/shared/MainButton";
 
 type Option = {
   value: string;
-  label:string;
+  label: string;
 };
+
 const serviciosOptions = servicios.map((s) => ({
   value: s.title,
   label: s.title,
 }));
-
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,23 +34,45 @@ export function ContactForm() {
 
   const handleChange = (selected: readonly Option[] | null) => {
     setServices(selected ? [...selected] : []);
-    
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    // Datos que se envían a EmailJS
+    const templateParams = {
+      user_name: formData.get("name"),
+      company: formData.get("company"),
+      redes: formData.get("redes"),
+      user_email: formData.get("email"), // importante para Reply-To
+      phone: formData.get("phone"),
+      services: services.map((s) => s.label).join(", "),
+    };
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error al enviar el email:", error);
+      alert("Hubo un problema al enviar tu mensaje. Intenta de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
     return (
-      <Card className="border-emerald-500/30 bg-gray-950/80 backdrop-blur-sm">
+      <Card className=" flex  !p-6 h-full border-emerald-500/30 bg-gray-950/80 backdrop-blur-sm">
         <CardContent className="!pt-8">
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center !mx-auto !mb-4 shadow-lg shadow-emerald-500/25">
@@ -62,6 +85,9 @@ export function ContactForm() {
               Gracias por contactarnos. Te responderemos en las próximas 24
               horas.
             </p>
+            <MainButton className="flex justify-center w-full !mt-26 items-center" href="/" icon={<ArrowRight />}>
+              Volver al inicio
+            </MainButton>
           </div>
         </CardContent>
       </Card>
@@ -70,9 +96,7 @@ export function ContactForm() {
 
   return (
     <div className="relative">
-      {/* Animated background lights */}
-
-      <Card className=" shadow-2xl bg-gradient-to-b rounded-xl from-white/90 to-green-100 border !p-4">
+      <Card className="shadow-2xl bg-gradient-to-b rounded-xl from-white/90 to-green-100 border !p-4">
         <CardHeader>
           <CardTitle className=" text-3xl font-bold text-black/90">
             Hablemos 👋
@@ -94,6 +118,7 @@ export function ContactForm() {
                 </label>
                 <Input
                   id="name"
+                  name="name"
                   placeholder="Tu nombre completo"
                   required
                   className="border-gray-700  !px-2 bg-gray-950/80 text-white placeholder:text-gray-500 focus:border-emerald-500 focus:ring-emerald-500/50"
@@ -108,6 +133,7 @@ export function ContactForm() {
                 </label>
                 <Input
                   id="company"
+                  name="company"
                   placeholder="Nombre de tu empresa"
                   className="border-gray-700 !px-2 bg-gray-950/80 text-white placeholder:text-gray-500 focus:border-emerald-500 focus:ring-emerald-500/50"
                 />
@@ -116,13 +142,14 @@ export function ContactForm() {
 
             <div className="!space-y-2">
               <label
-                htmlFor="email"
+                htmlFor="redes"
                 className="text-sm font-medium text-black/90"
               >
                 Si ya tiene redes sociales, déjanos el link! *
               </label>
               <Input
                 id="redes"
+                name="redes"
                 type="text"
                 placeholder="https://www.instagram.com/agencia.ndw"
                 required
@@ -139,6 +166,7 @@ export function ContactForm() {
               </label>
               <Input
                 id="email"
+                name="email"
                 type="email"
                 placeholder="tu@email.com"
                 required
@@ -155,6 +183,7 @@ export function ContactForm() {
               </label>
               <Input
                 id="phone"
+                name="phone"
                 type="tel"
                 placeholder="+54 600 000 000"
                 className="border-gray-700 !px-2 bg-gray-950/80 text-white placeholder:text-gray-500 focus:border-emerald-500 focus:ring-emerald-500/50"
@@ -168,7 +197,6 @@ export function ContactForm() {
               >
                 Servicio de interés
               </label>
-
               <Select
                 id="service"
                 isMulti
@@ -180,35 +208,34 @@ export function ContactForm() {
                 styles={{
                   control: (base) => ({
                     ...base,
-                    backgroundColor: "rgba(17, 24, 39, 0.8)", // bg-gray-950/80
-                    borderColor: "#374151", // border-gray-700
+                    backgroundColor: "rgba(17, 24, 39, 0.8)",
+                    borderColor: "#374151",
                     padding: "4px",
                   }),
                   menu: (base) => ({
                     ...base,
-                    backgroundColor: "#111827", // gris oscuro
+                    backgroundColor: "#111827",
                     color: "white",
                   }),
                   multiValue: (base) => ({
                     ...base,
-                    backgroundColor: "#10b98133", // verde translúcido
+                    backgroundColor: "#10b98133",
                   }),
                   multiValueLabel: (base) => ({
                     ...base,
-                    color: "#10b981", // verde emerald
+                    color: "#10b981",
                   }),
-                  option: (base, { isFocused, isSelected }) => ({ 
+                  option: (base, { isFocused, isSelected }) => ({
                     ...base,
                     backgroundColor: isSelected
                       ? "#10b981"
                       : isFocused
                       ? "#10b98133"
                       : "transparent",
-                    color: isSelected ? "white" : "white",
+                    color: "white",
                   }),
                 }}
               />
-
               <p className="text-sm text-gray-400">
                 Seleccionaste:{" "}
                 {services.length > 0
