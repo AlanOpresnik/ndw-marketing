@@ -4,8 +4,8 @@ import React from "react";
 
 export default function PhotosSection() {
   return (
-    <div className="md:grid grid-cols-2 gap-12 !p-12 !z-10">
-      <div className="h-[600px]">
+    <div className="md:grid grid-cols-2 gap-12 !p-12 !z-50">
+      <div className="h-[600px] !z-50">
         <Image
           width={700}
           height={700}
@@ -38,7 +38,7 @@ export default function PhotosSection() {
         <a
           href="https://www.instagram.com/agencia.ndw/"
           target="_blank"
-          className="!mt-6 !px-6 !w-fit cursor-pointer flex gap-2 !py-3 bg-navy text-white font-bold rounded-full hover:bg-primary-blue transition-colors"
+          className="!mt-6 !px-6 !w-fit cursor-pointer flex !z-[9999] gap-2 !py-3 bg-navy text-white font-bold rounded-full hover:bg-primary-blue transition-colors"
         >
           <ArrowRight />
           Ver galeria de imagenes
