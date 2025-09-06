@@ -40,13 +40,12 @@ export default function Home() {
         <div className="line line-10 !z-0"></div>
         <div className="line line-11 !z-0"></div>
         <div className="line line-12 !z-0"></div>
-         <div className="line line-13 !z-0"></div>
+        <div className="line line-13 !z-0"></div>
         <div className="line line-14 !z-0"></div>
         <div className="line line-15 !z-0"></div>
         <div className="line line-16 !z-0"></div>
         <div className="line line-17 !z-0"></div>
       </div>
-
 
       {/* More Connection Lines - RESTORED */}
       <div className="connection-lines !z-0">
@@ -91,6 +90,13 @@ export default function Home() {
         <div className="z-10 relative">
           <AboutUsSection />
         </div>
+        <div>
+          <div className="!pb-24 w-full flex flex-col justify-center items-center">
+            <h1 className="text-[3rem]  md:text-[6rem] lg:text-[8rem] xl:text-[10rem] text-center font-bold bg-gradient-to-r from-[#F05928] via-[#0373FF] to-[#A4A9F6] bg-clip-text text-transparent will-change-transform">
+              <span className=" flex justify-center items-center ">NDW</span>
+            </h1>
+          </div>
+        </div>
         <div className="!mb-24">
           <PowBanner />
         </div>
@@ -98,7 +104,6 @@ export default function Home() {
           <div className=" items-center ">
             <WorldMapDemo />
           </div>
-
         </section>
         <section id="services" className="">
           <BentoGridServices />

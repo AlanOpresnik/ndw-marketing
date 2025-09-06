@@ -29,7 +29,7 @@ function BentoGridItem({ className, title, description, icon }: BentoGridItemPro
     >
       <div className="flex flex-col gap-6">
         <div className="mb-4">{icon}</div>
-        <CardTitle className="text-2xl font-bold">{title}</CardTitle>
+        <CardTitle className="text-2xl font-bold bg-gradient-to-r from-[#F05928] via-[#0373FF] to-[#A4A9F6] bg-clip-text text-transparent">{title}</CardTitle>
         <CardContent className="p-0 text-neutral-200">
           <p className="text-base leading-relaxed">{description}</p>
         </CardContent>

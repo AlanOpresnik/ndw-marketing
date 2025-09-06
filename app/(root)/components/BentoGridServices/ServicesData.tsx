@@ -56,7 +56,7 @@ export const services = [
   {
     title: "MKT con influencers y streams",
     description:
-      "Conectamos tu marca con influencers que realmente llegan a tu público. Armamos la campaña, definimos la estrategia y medimos los resultados para que tu inversión tenga impacto real. ¿Querés aparecer en los streams más vistos de Argentina? 🚀 Te acompañamos desde la idea creativa hasta la acción final para que tu marca esté presente donde todos miran. ",
+      "Conectamos tu marca con influencers que realmente llegan a tu público. Armamos la campaña, definimos la estrategia y medimos los resultados para que tu inversión tenga impacto real. ¿Querés aparecer en los streams más vistos de Argentina?  Te acompañamos desde la idea creativa hasta la acción final para que tu marca esté presente donde todos miran. ",
     icon: <StretchHorizontal/>
       },
 ];

@@ -146,15 +146,7 @@ export default function AboutUsSection() {
         </div>
       </div>
 
-      <div className="!pb-24">
-        <h1
-          ref={titleRef}
-          className="text-[3rem] w-full md:text-[6rem] lg:text-[8rem] xl:text-[10rem] text-center font-bold bg-gradient-to-r from-[#F05928] via-[#0373FF] to-[#A4A9F6] bg-clip-text text-transparent will-change-transform"
-        >
-          <span className="block md:hidden">NEW DIGITAL</span>
-          <span className="hidden md:block">NEW DIGITAL </span>
-        </h1>
-      </div>
+   
     </>
   );
 }
