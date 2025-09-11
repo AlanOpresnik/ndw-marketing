@@ -18,7 +18,7 @@ interface CarouselSlide {
 const slides: CarouselSlide[] = [
   {
     id: 1,
-    image: "/proyectosCarousel/BannerImageModelos.jpeg",
+    image: "/proyectosCarousel/bannerImageModelos.jpeg",
     title: "Foto con Modelos",
     description: "Fotografia profesional con modelos",
     objectPosition: "center 10%", // ✅ sigue igual que antes
