@@ -20,7 +20,7 @@ const testimonials = [
     author: "Mari ",
     position: "Mari, Vuelo de Angeles",
     company: "Vuelo de Angeles",
-    avatar: "https://avatar.iran.liara.run/public",
+        avatar: "https://avatar.iran.liara.run/public?username=mari&background=random",
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const testimonials = [
     author: "Sol",
     position: "Sol, CrediOn",
     company: "CrediOn",
-    avatar: "https://avatar.iran.liara.run/public",
+  avatar: "https://avatar.iran.liara.run/public?username=sol&background=random",
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const testimonials = [
     author: "Gabriela ",
     position: "Gabriela,  Eco Asociación",
     company: " Eco Asociación",
-    avatar: "https://avatar.iran.liara.run/public",
+     avatar: "https://avatar.iran.liara.run/public?username=gabriela&background=random",
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const testimonials = [
     author: "Nadina",
     position: "Nadina, NAF Seguros",
     company: "NAF Seguros",
-    avatar: "https://avatar.iran.liara.run/public",
+    avatar: "https://avatar.iran.liara.run/public?username=nadina&background=random",
   },
 ];
 

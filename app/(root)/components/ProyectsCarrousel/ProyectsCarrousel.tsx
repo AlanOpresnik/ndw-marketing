@@ -1,7 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import type { EmblaCarouselType } from 'embla-carousel';
+import type { EmblaCarouselType } from "embla-carousel";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -12,28 +12,31 @@ interface CarouselSlide {
   image: string;
   title: string;
   description: string;
+  objectPosition: string;
 }
 
 const slides: CarouselSlide[] = [
   {
     id: 1,
-    image: "/proyectosCarousel/BannerImageModelos.jpg",
+    image: "/proyectosCarousel/BannerImageModelos.jpeg",
     title: "Foto con Modelos",
     description: "Fotografia profesional con modelos",
+    objectPosition: "center 10%", // ✅ sigue igual que antes
   },
   {
     id: 2,
-    image: "/proyectosCarousel/BannerImageSplash.jpg",
+    image: "/proyectosCarousel/BannerImageSplash.jpeg",
     title: "Fotos de Producto",
     description: "Nos encargamos de las fotos de tu Ecommerce",
+    objectPosition: "center center", // ✅ centrada normal
   },
   {
     id: 3,
     image: "/backgroundImage.jpg",
     title: "Fotografia profesional",
     description: "Fotografia profesional para todos los lugares",
+    objectPosition: "center ", // ✅ foco arriba (por ejemplo)
   },
-
 ];
 
 export const ProyectsCarrousel = () => {
@@ -107,9 +110,10 @@ export const ProyectsCarrousel = () => {
                 <Image
                   src={slide.image}
                   alt={slide.title}
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover object-[center_29%]  transition-transform duration-700 group-hover:scale-105"
+                  width={1200}
+                  height={800}
+                  style={{ objectPosition: slide.objectPosition }}
+                  className="w-full h-full object-cover  transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-overlay opacity-60" />
 

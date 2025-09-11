@@ -52,13 +52,14 @@ export const metadata: Metadata = {
       "Transformamos tu marca con estrategias digitales efectivas y asesoramiento personalizado para que llegues al éxito online.",
     images: [
       {
-        url: "https://ndwagenciadigital.com/mockup-ndw.png",
+        url: "/mockup-ndw.png",
         width: 1200,
         height: 630,
         alt: "NDW Agencia de Marketing - Estrategias Digitales",
-        type: "image/png",
+        
       },
     ],
+    
   },
   twitter: {
     card: "summary_large_image",
