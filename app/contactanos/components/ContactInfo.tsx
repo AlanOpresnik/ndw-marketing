@@ -26,7 +26,7 @@ export function ContactInfo() {
               </div>
               <div>
                 <p className="font-medium text-black/90">Teléfono</p>
-                <p className="text-black/70">+54 11 69 98 55 66</p>
+                <p className="text-black/70">+54 11 25 93 27 48</p>
               </div>
             </div>
 

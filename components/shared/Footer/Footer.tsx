@@ -75,7 +75,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:underline hover:text-ndw-green transition-colors"
                 >
-                  +54 11 69 98 55 66
+                  +54 11 25 93 27 48
                 </a>
               </li>
               <li className="flex items-center gap-3">
